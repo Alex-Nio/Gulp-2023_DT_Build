@@ -1,0 +1,9 @@
+.footer {
+
+	&__content {
+		@include fdrjc_aic;
+		height: 50px;
+		background-color: black;
+		color: $white;
+	}
+}

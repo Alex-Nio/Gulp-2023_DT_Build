@@ -1,0 +1,79 @@
+.test-section {
+	&__content {
+		padding: 35px;
+		margin: 40px 0;
+		background-color: #dddbdb;
+		border-radius: 3rem;
+	}
+
+	&__image {
+		width: 120px;
+		margin: 40px 0;
+	}
+
+	&__icons {
+		margin: 40px 0;
+	}
+
+	&__components {
+		margin: 40px 0;
+	}
+
+	&__fonts {
+		margin: 40px 0 20px 0;
+
+		& h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-family: $ff_R;
+			margin-bottom: 20px;
+		}
+	}
+}
+.icon {
+	font-size: 6rem;
+	margin: 0 10px;
+	@include defaultTransition();
+
+	&:hover {
+		color: red;
+		@include defaultTransition();
+		cursor: pointer;
+	}
+}
+
+h1 {
+	font-size: 3.2rem;
+}
+
+h2 {
+	font-size: 2.8rem;
+}
+
+h3 {
+	font-size: 2.4rem;
+}
+
+h4 {
+	font-size: 2rem;
+}
+
+h5 {
+	font-size: 1.6rem;
+}
+
+h6 {
+	font-size: 1.2rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: bolder;
+}

@@ -1,0 +1,43 @@
+//? Основные цвета
+$white: #ffffff;
+$black: #000;
+// $primary: ;
+// $secondary: ;
+// $accent: ;
+
+//? По умолчанию
+$base_fz: 1.6rem; //? Размер шрифта по умолчанию 16px
+$base_ff: "Arial", sans-serif; //? Шрифт по умолчанию
+$base_hover: $black; //? Цвет при наведении по умолчанию
+$base_bg: $white; //? Цвет фона по умолчанию
+$base_color: $black; //? Цвет текста по умолчанию
+
+//? Переменные семейств шрифтов
+$ff_R: "Roboto", sans-serif;
+
+//? Стиль шрифтов
+$I: italic;
+$O: oblique;
+
+//? Толщина семейства шрифтов
+$th: 100; // Thin
+$el: 200; // Extra Light
+$l: 300; // Light
+$r: 400; // Regular
+$m: 500; // Medium
+$sb: 600; // SemiBold
+$b: 700; // Bold
+$eb: 800; // Extra Bold
+$bl: 900; // Super
+
+//? Размеры
+$minWidth: 320px; // Минимальная ширина страницы
+$maxWidthContainer: 1920; // Ширина контейнера (0 = нет ограничения)
+$containerPadding: 40; // Отступы контейнера // (40 = по 20px слева и справа, 0 = нет отступа)
+$containerWidth: $maxWidthContainer + $containerPadding; // Ширина срабатывания первого брейкпоинта
+
+//? Брейк-поинты
+$pc: 1199px; // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$tablet: 992px; // Планшеты, некоторые телефоны в горизонтальном положении
+$mobile: 767px; // Телефоны L
+$mobileSmall: 480px; // Телефоны S
