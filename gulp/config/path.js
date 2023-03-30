@@ -10,23 +10,30 @@ export const path = {
     js: `${buildFolder}/js/`,
     css: `${buildFolder}/css/`,
     html: `${buildFolder}/`,
+    pages: `${buildFolder}/`,
     images: `${buildFolder}/images/`,
     fonts: `${buildFolder}/fonts/`,
     files: `${buildFolder}/files/`
   },
   src: {
-    js: `${srcFolder}/assets/js/app.js`,
     images: `${srcFolder}/assets/images/**/*.{jpg,jpeg,png,gif,webp}`,
     svg: `${srcFolder}/assets/images/**/*.svg`,
-    scss: `${srcFolder}/assets/scss/main.scss`,
+    svgicons: `${srcFolder}/assets/images/svg/*.svg`,
     html: `${srcFolder}/*.html`,
-    files: `${srcFolder}/files/**/*.*`,
-    svgicons: `${srcFolder}/assets/images/svg/*.svg`
+    pages: `${srcFolder}/html/views/*.html`,
+    js: `${srcFolder}/styles/js/main.js`,
+    componentsJs: `${srcFolder}/html/components/**/*.js`,
+    scss: `${srcFolder}/styles/scss/main.scss`,
+    componentsScss: `${srcFolder}/html/components/**/*.scss`,
+    files: `${srcFolder}/files/**/*.*`
   },
   watch: {
-    js: `${srcFolder}/assets/js/**/*.js`,
-    scss: `${srcFolder}/assets/scss/**/*.scss`,
+    js: `${srcFolder}/styles/js/**/*.js`,
+    componentsJs: `${srcFolder}/html/components/**/*.js`,
+    scss: `${srcFolder}/styles/scss/**/*.scss`,
+    componentsScss: `${srcFolder}/html/components/**/*.scss`,
     html: `${srcFolder}/**/*.html`,
+    pages: `${srcFolder}/html/views/*.html`,
     images: `${srcFolder}/**/*.{jpg,jpeg,png,svg,gif,webp,ico}`,
     files: `${srcFolder}/files/**/*.*`
   },

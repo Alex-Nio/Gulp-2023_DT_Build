@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="ru">
-@@include('components/head.html', { 'title': 'Главная' })
+@@include('components/head/head.html', { 'title': 'Главная' })
 
 <body>
   <div class="full-wrapper">
-    @@include('components/header.html')
+    @@include('components/header/header.html')
 
     <main class="page">
       <div class="page__container container">
-        @@include('sections/test-section.html')
+        @@include('sections/section.html')
       </div>
     </main>
 
-    @@include('components/footer.html', {})
+    @@include('components/footer/footer.html', {})
 
   </div>
   <script src="js/app.min.js"></script>

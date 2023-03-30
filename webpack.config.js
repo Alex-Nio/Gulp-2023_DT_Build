@@ -9,7 +9,7 @@ const path = {
 };
 
 export const webpackConfig = isMode => ({
-  entry: ["@babel/polyfill", `${path.src}/assets/js/app.js`],
+  entry: ["@babel/polyfill", `${path.src}/styles/js/main.js`],
   mode: isMode ? "development" : "production",
   output: {
     path: `${path.build}/js`,

@@ -25,38 +25,78 @@ WebPack занимается обработкой файлов c JavaScript и �
 ## :open_file_folder: Файловая структура
 
 ```
-gulp
+Poject
 ├── dist
+│   ├── fonts
+│   ├── styles
+│   ├── images
+│   ├── 404.html
+│   ├── page.html
+│   ├── index.html
 ├── gulp
-│   ├── config
-│   ├── tasks
+│   ├── config
+│   ├── tasks
 ├── src
-│   ├── assets
-│   │   ├── fonts
-│   │   ├── images
-│   │   │   ├── svg
-│   │   ├── js
-│   │   │   ├── modules
-│   │   │   │   ├── index.js
-│   │   │   ├── app.js
-│   │   ├── scss
-│   │   │   ├── components
-│   │   │   ├── config
-│   │   │   │   ├── base
-│   │   │   │   ├── helpers
-│   │   │   │   ├── libs
-│   │   │   ├── sections
-│   │   │   ├── imports.scss
-│   │   │   ├── main.scss
-│   ├── files
-│   ├── html
-│   │   ├── components
-│   │   ├── sections
-├── index.html
-├── webpack.config.js
+│   ├── assets
+│   │   ├── fonts
+│   │   ├── images
+│   ├── files
+│   ├── styles
+│   │   ├── js
+│   │   │   ├── imports.js
+│   │   │   ├── main.js
+│   │   ├── scss
+│   │   │   ├── config
+│   │   │   │   ├── base
+│   │   │   │   │   ├── _fonts.scss
+│   │   │   │   │   ├── components.scss
+│   │   │   │   ├── helpers
+│   │   │   │   │   ├── _functions.scss
+│   │   │   │   │   ├── _mixins.scss
+│   │   │   │   │   ├── _variables.scss
+│   │   │   │   ├── libs
+│   │   │   │   │   ├── _flexframework.scss
+│   │   │   │   │   ├── _reset.scss
+│   │   │   │   │   ├── iconfont.scss
+│   │   │   ├── sections
+│   │   │   │   │   ├── section.scss
+│   │   │   ├── main.scss
+│   ├── html
+│   │   ├── components
+│   │   │   ├── component
+│   │   │   │   ├── component.html
+│   │   │   │   ├── component.js
+│   │   │   │   ├── component.scss
+│   │   ├── sections
+│   │   │   │   ├── section.html
+│   │   ├── views
+│   │   │   │   ├── 404.html
+│   │   │   │   ├── newPage.html
+│   ├── index.html
+├── .babelrc
+├── .gitignore
 ├── gulpfile.js
 ├── package-lick.json
 ├── package.json
 ├── README.md
-└── .gitignore
+└── webpack.config.js
 ```
+
+### Описание файловой структуры:
+
+- `dist` - папка, в которой находятся сгенерированные файлы после выполнения задач с помощью Gulp
+- `gulp` - папка с конфигурацией задач Gulp, разделенной на config и tasks
+- `src` - папка, в которой находятся исходные файлы проекта
+- `assets` - папка, в которой находятся шрифты и изображения
+- `files` - папка, в которой находятся другие файлы, такие как JSON-файлы \* или XML-файлы
+- `styles` - папка, в которой находятся файлы стилей
+- `js` - папка, в которой находятся файлы JavaScript, такие как imports.js и main.js
+- `scss` - папка, в которой находятся файлы SCSS стилей, разделенных на конфигурационные, вспомогательные, библиотеки, разделы и основной файл main.scss
+- `html` - папка, в которой находятся HTML-файлы, разделенные на компоненты, секции и другие страницы (views)
+- `components` - папка, в которой находятся файлы HTML, JavaScript и SCSS для компонентов, таких как кнопки, формы и т.д.
+- `sections` - папка, в которой находятся файлы HTML для секций, которые можно использовать для добавления компонентов с помощью gulp-file-include
+- `views` - папка, в которой находятся HTML-файлы для страниц проекта, такие как 404.html и page.html
+- `index.html` - основной HTML-файл проекта
+- `.babelrc` - конфигурационный файл для Babel, который может использоваться для преобразования кода ECMAScript 2015+ в код, который может работать в браузерах
+- `.gitignore` - файл, который говорит Git, какие файлы и папки должны быть проигнорированы при коммите изменений в репозиторий Git
+- `gulpfile.js` - файл, в котором находятся задачи Gulp, их конфигурация и запуск

@@ -8,7 +8,7 @@ const __dirname = path.resolve();
 
 export const html = () => {
   return app.gulp
-    .src(app.path.src.html)
+    .src([app.path.src.html, "src/html/views/**/*.html"])
     .pipe(
       app.plugins.plumber(
         app.plugins.notify.onError({

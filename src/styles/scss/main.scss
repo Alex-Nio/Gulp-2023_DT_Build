@@ -1,7 +1,7 @@
 @use "sass:math";
 
 // Импорты стилей, css-фреймворков, переменных и т.п.
-@import "imports.scss";
+@import "./config/imports.scss";
 
 // -----------------------------------------------
 // --------------MAIN SETTINGS--------------------
@@ -241,9 +241,7 @@ button {
 }
 
 // Импорты секций
-@import "sections/sectionForTest/test-section"; //? Тестовая секция, нужно удалить
+@import "sections/section";
 
 // Импорты компонентов
-@import "components/header";
-@import "components/button";
-@import "components/footer";
+@import "./config/base/components.scss";
