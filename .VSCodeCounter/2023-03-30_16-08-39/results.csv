@@ -1,0 +1,29 @@
+"filename", "language", "HTML", "JavaScript", "SCSS", "XML", "comment", "blank", "total"
+"e:\Работа\Code all\activeProjects\Coding\gulp-2023\src\assets\fonts\iconfont.svg", "XML", 0, 0, 0, 43, 0, 0, 43
+"e:\Работа\Code all\activeProjects\Coding\gulp-2023\src\html\components\component\component.html", "HTML", 2, 0, 0, 0, 0, 1, 3
+"e:\Работа\Code all\activeProjects\Coding\gulp-2023\src\html\components\component\component.js", "JavaScript", 0, 3, 0, 0, 0, 1, 4
+"e:\Работа\Code all\activeProjects\Coding\gulp-2023\src\html\components\component\component.scss", "SCSS", 0, 0, 5, 0, 0, 1, 6
+"e:\Работа\Code all\activeProjects\Coding\gulp-2023\src\html\components\footer\footer.html", "HTML", 7, 0, 0, 0, 0, 1, 8
+"e:\Работа\Code all\activeProjects\Coding\gulp-2023\src\html\components\footer\footer.scss", "SCSS", 0, 0, 8, 0, 0, 1, 9
+"e:\Работа\Code all\activeProjects\Coding\gulp-2023\src\html\components\head\head.html", "HTML", 10, 0, 0, 0, 0, 1, 11
+"e:\Работа\Code all\activeProjects\Coding\gulp-2023\src\html\components\header\header.html", "HTML", 3, 0, 0, 0, 0, 1, 4
+"e:\Работа\Code all\activeProjects\Coding\gulp-2023\src\html\components\header\header.js", "JavaScript", 0, 3, 0, 0, 0, 1, 4
+"e:\Работа\Code all\activeProjects\Coding\gulp-2023\src\html\components\header\header.scss", "SCSS", 0, 0, 13, 0, 0, 2, 15
+"e:\Работа\Code all\activeProjects\Coding\gulp-2023\src\html\sections\section.html", "HTML", 33, 0, 0, 0, 0, 7, 40
+"e:\Работа\Code all\activeProjects\Coding\gulp-2023\src\html\views\404.html", "HTML", 14, 0, 0, 0, 0, 5, 19
+"e:\Работа\Code all\activeProjects\Coding\gulp-2023\src\html\views\page.html", "HTML", 16, 0, 0, 0, 0, 6, 22
+"e:\Работа\Code all\activeProjects\Coding\gulp-2023\src\index.html", "HTML", 16, 0, 0, 0, 0, 6, 22
+"e:\Работа\Code all\activeProjects\Coding\gulp-2023\src\styles\js\imports.js", "JavaScript", 0, 2, 0, 0, 0, 1, 3
+"e:\Работа\Code all\activeProjects\Coding\gulp-2023\src\styles\js\main.js", "JavaScript", 0, 1, 0, 0, 0, 1, 2
+"e:\Работа\Code all\activeProjects\Coding\gulp-2023\src\styles\scss\config\base\_fonts.scss", "SCSS", 0, 0, 1, 0, 11, 2, 14
+"e:\Работа\Code all\activeProjects\Coding\gulp-2023\src\styles\scss\config\base\components.scss", "SCSS", 0, 0, 3, 0, 0, 1, 4
+"e:\Работа\Code all\activeProjects\Coding\gulp-2023\src\styles\scss\config\helpers\_functions.scss", "SCSS", 0, 0, 3, 0, 1, 1, 5
+"e:\Работа\Code all\activeProjects\Coding\gulp-2023\src\styles\scss\config\helpers\_mixins.scss", "SCSS", 0, 0, 42, 0, 6, 8, 56
+"e:\Работа\Code all\activeProjects\Coding\gulp-2023\src\styles\scss\config\helpers\_variables.scss", "SCSS", 0, 0, 27, 0, 10, 7, 44
+"e:\Работа\Code all\activeProjects\Coding\gulp-2023\src\styles\scss\config\imports.scss", "SCSS", 0, 0, 7, 0, 0, 1, 8
+"e:\Работа\Code all\activeProjects\Coding\gulp-2023\src\styles\scss\config\libs\_flexframework.scss", "SCSS", 0, 0, 369, 0, 41, 93, 503
+"e:\Работа\Code all\activeProjects\Coding\gulp-2023\src\styles\scss\config\libs\_reset.scss", "SCSS", 0, 0, 123, 0, 5, 8, 136
+"e:\Работа\Code all\activeProjects\Coding\gulp-2023\src\styles\scss\config\libs\iconfont.scss", "SCSS", 0, 0, 61, 0, 2, 16, 79
+"e:\Работа\Code all\activeProjects\Coding\gulp-2023\src\styles\scss\main.scss", "SCSS", 0, 0, 174, 0, 33, 41, 248
+"e:\Работа\Code all\activeProjects\Coding\gulp-2023\src\styles\scss\sections\section.scss", "SCSS", 0, 0, 72, 0, 0, 15, 87
+"Total", "-", 101, 9, 908, 43, 109, 229, 1399

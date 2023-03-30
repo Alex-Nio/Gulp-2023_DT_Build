@@ -40,6 +40,7 @@
     "fs": "^0.0.1-security",
     "gh-pages": "^4.0.0",
     "gulp": "^4.0.2",
+    "gulp-append-prepend": "^1.0.9",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
@@ -73,5 +74,8 @@
     "webpack": "^5.65.0",
     "webpack-stream": "^7.0.0",
     "yargs": "^17.7.1"
+  },
+  "dependencies": {
+    "gulp-inject-string": "^1.1.2"
   }
 }
