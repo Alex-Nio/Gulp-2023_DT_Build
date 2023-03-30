@@ -23,6 +23,7 @@ import { otfToTtf, ttfToWoff } from "./gulp/tasks/fonts.js";
 import { svgSprive } from "./gulp/tasks/svgSprive.js";
 import { zip } from "./gulp/tasks/zip.js";
 import { ftp } from "./gulp/tasks/ftp.js";
+import { createComponent } from "./gulp/tasks/create.js";
 
 // Наблюдатель за изменениями в файлах
 function watcher() {
@@ -55,3 +56,5 @@ export { deployFTP };
 
 // Выполнение сценария по умолчанию
 gulp.task("default", dev);
+// Создание компонента по команде: gulp create-component --name my-component, где my-component - это имя компонента, которое вы хотите создать
+gulp.task("create-component", createComponent);

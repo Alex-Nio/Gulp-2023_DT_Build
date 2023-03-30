@@ -18,7 +18,15 @@
     "type": "git",
     "url": ""
   },
-  "keywords": ["gulp", "bem", "webpack", "js", "css", "scss", "html"],
+  "keywords": [
+    "gulp",
+    "bem",
+    "webpack",
+    "js",
+    "css",
+    "scss",
+    "html"
+  ],
   "author": "Alex Nio",
   "license": "ISC",
   "homepage": "",
@@ -35,6 +43,7 @@
     "gulp-autoprefixer": "^8.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
+    "gulp-file": "^0.4.0",
     "gulp-file-include": "^2.3.0",
     "gulp-fonter": "^0.3.0",
     "gulp-ftp": "^1.1.0",
@@ -62,6 +71,7 @@
     "vinyl-ftp": "^0.6.1",
     "webp-converter": "2.2.3",
     "webpack": "^5.65.0",
-    "webpack-stream": "^7.0.0"
+    "webpack-stream": "^7.0.0",
+    "yargs": "^17.7.1"
   }
 }
