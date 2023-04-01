@@ -1,13 +1,12 @@
-//? Дефолтный шрифт
+//? Дефолтный шрифт для тестов
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-//? Пример
+//? Пример подключения
 // @font-face {
-// 	font-family: 'Proxima Nova Bold';
-// 	src: local('Proxima Nova Bold'), local('Proxima-Nova-Bold'),
-// 		url('@/assets/fonts/ProximaNova-Bold.woff2') format('woff2'),
-// 		url('@/assets/fonts/ProximaNova-Bold.woff') format('woff'),
-// 		url('@/assets/fonts/ProximaNova-Bold.ttf') format('truetype');
-// 	font-weight: 700;
+// 	font-family: "Ubuntu 500";
 // 	font-style: normal;
+// 	font-weight: 500;
+// 	font-display: swap;
+// 	src: url("../fonts/ubuntu-v14-latin-ext_latin_cyrillic-ext_cyrillic-500.woff2") format("woff2"),
+// 		url("../fonts/ubuntu-v14-latin-ext_latin_cyrillic-ext_cyrillic-500.woff") format("woff");
 // }

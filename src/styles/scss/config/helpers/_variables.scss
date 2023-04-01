@@ -3,12 +3,12 @@ $white: #ffffff;
 $black: #000;
 // $primary: ;
 // $secondary: ;
-// $accent: ;
+$accent: #1253b5;
 
 //? По умолчанию
 $base_fz: 1.6rem; //? Размер шрифта по умолчанию 16px
-$base_ff: "Arial", sans-serif; //? Шрифт по умолчанию
-$base_hover: $black; //? Цвет при наведении по умолчанию
+$base_ff: "Ubuntu 400", sans-serif; //? Шрифт по умолчанию
+$base_hover: $accent; //? Цвет при наведении по умолчанию
 $base_bg: $white; //? Цвет фона по умолчанию
 $base_color: $black; //? Цвет текста по умолчанию
 
@@ -32,12 +32,13 @@ $bl: 900; // Super
 
 //? Размеры
 $minWidth: 320px; // Минимальная ширина страницы
-$maxWidthContainer: 1920; // Ширина контейнера (0 = нет ограничения)
-$containerPadding: 40; // Отступы контейнера // (40 = по 20px слева и справа, 0 = нет отступа)
+$maxWidthContainer: 1170px; // Ширина контейнера (0 = нет ограничения)
+$containerPadding: 16px; // Отступы контейнера // (32 = по 16px слева и справа, 0 = нет отступа)
 $containerWidth: $maxWidthContainer + $containerPadding; // Ширина срабатывания первого брейкпоинта
+$headerHeight: 96px; // Высота отступа контента от header
 
 //? Брейк-поинты
 $pc: 1199px; // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
 $tablet: 992px; // Планшеты, некоторые телефоны в горизонтальном положении
 $mobile: 767px; // Телефоны L
-$mobileSmall: 480px; // Телефоны S
+$mobileSmall: 340px; // Телефоны S

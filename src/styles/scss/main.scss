@@ -63,14 +63,10 @@ body {
   min-width: $minWidth;
 
   // Скролл заблокирован
-  .lock & {
+  &.lock {
     overflow: hidden;
     touch-action: none;
   }
-
-  // Сайт загружен
-  // .loaded & {
-  // }
 }
 
 // Оболочка wrapper
@@ -93,6 +89,18 @@ body {
   }
 }
 
+// Добавляем скролл если ширина экрана меньше минимальной ширины
+@media screen and (max-width: $minWidth) {
+  body {
+    overflow-x: scroll;
+  }
+}
+
+// Отступ контентной части от шапки сайта
+.page {
+  margin-top: $headerHeight;
+}
+
 //! Контейнер
 [class*="__container"] {
   max-width: $maxWidthContainer + $containerPadding * 2;
@@ -103,7 +111,7 @@ body {
 // Ограничивающий контейнер
 // Тип адаптива:
 // 1 = отзывчивость (у контейнера нет брейкпоинтов),
-// 2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
+// 2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам см. _variables.scss)
 $responsiveType: 1;
 
 /*
@@ -141,7 +149,7 @@ $responsiveType: 1;
 
     @media (max-width: $mobile) {
       max-width: rem(640);
-      padding: 0 20px;
+      padding: 0 16px;
     }
 
     @media (max-width: $mobileSmall) {
@@ -211,6 +219,13 @@ button {
   background: transparent;
   cursor: pointer;
 }
+
+// ------------------------------------------------
+// -------------------Reused-----------------------
+// ------------------------------------------------
+
+// .title {}
+// .subtitle {}
 
 // ------------------------------------------------
 // -----------------KEYFRAMES----------------------
