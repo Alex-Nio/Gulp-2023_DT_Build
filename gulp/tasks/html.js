@@ -27,15 +27,15 @@ export const html = () => {
       htmlMin({
         useShortDoctype: true,
         sortClassName: true,
-        collapseWhitespace: app.isBuild,
-        removeComments: app.isBuild
+        collapseWhitespace: app.isBuildMax || app.isBuildMin,
+        removeComments: app.isBuildMax || app.isBuildMin
       })
     )
     .pipe(app.plugins.replace(/@img\//g, "images/"))
-    .pipe(app.plugins.if(app.isBuild, webpHtmlNosvg()))
+    .pipe(app.plugins.if(app.isBuildMax, webpHtmlNosvg()))
     .pipe(
       app.plugins.if(
-        app.isBuild,
+        app.isBuild || app.isBuildOptimized || app.isBuildMin || app.isBuildMax,
         versionNumber({
           value: "%DT%",
           append: {

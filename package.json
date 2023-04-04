@@ -7,26 +7,20 @@
   "scripts": {
     "dev": "gulp",
     "start": "gulp",
-    "build": "gulp build --build",
+    "build": "gulp build",
+    "buildMin": "gulp build --min",
+    "buildMax": "gulp build --max",
+    "buildOptimized": "gulp build --optimized",
     "zip": "gulp deployZIP --build",
-    "deployFTP": "gulp deployFTP --build",
     "svgSprive": "gulp svgSprive",
-    "deploy": "gh-pages -d dist",
-    "predeploy": "npm run build"
+    "deployFTP": "gulp deployFTP --build",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
     "url": ""
   },
-  "keywords": [
-    "gulp",
-    "bem",
-    "webpack",
-    "js",
-    "css",
-    "scss",
-    "html"
-  ],
+  "keywords": ["gulp", "bem", "webpack", "js", "css", "scss", "html"],
   "author": "Alex Nio",
   "license": "ISC",
   "homepage": "",

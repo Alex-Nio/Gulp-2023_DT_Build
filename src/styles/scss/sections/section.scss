@@ -8,7 +8,6 @@
 
 	&__image {
 		width: 120px;
-		margin: 40px 0;
 	}
 
 	&__icons {
@@ -83,4 +82,8 @@ h4,
 h5,
 h6 {
 	font-weight: bolder;
+}
+
+.image-wrapper {
+	margin: 40px 0;
 }

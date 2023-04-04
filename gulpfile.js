@@ -4,8 +4,11 @@ import { plugins } from "./gulp/config/plugins.js"; // Импорт общих �
 
 // Передаем значения в глобальную переменную
 global.app = {
-  isBuild: process.argv.includes("--build"),
-  isDev: !process.argv.includes("--build"),
+  isBuildMax: process.argv.includes("--max"),
+  isBuildMin: process.argv.includes("--min"),
+  isBuildOptimized: process.argv.includes("--optimized"),
+  isBuildDefault:
+    !process.argv.includes("--max") && !process.argv.includes("--min") && !process.argv.includes("--optimized"),
   path: path,
   gulp: gulp,
   plugins: plugins
