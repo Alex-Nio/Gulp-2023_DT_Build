@@ -30,6 +30,10 @@ export const webpackConfig = isMode => ({
         resolve: {
           fullySpecified: false
         }
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
       }
     ]
   }

@@ -27,6 +27,7 @@ import { svgSprive } from "./gulp/tasks/svgSprive.js";
 import { zip } from "./gulp/tasks/zip.js";
 import { ftp } from "./gulp/tasks/ftp.js";
 import { createComponent } from "./gulp/tasks/create.js";
+import { cleanComponents } from "./gulp/tasks/cleanComponents.js";
 
 // Наблюдатель за изменениями в файлах
 function watcher() {
@@ -47,7 +48,7 @@ const fonts = gulp.series(otfToTtf, ttfToWoff);
 const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, js, images));
 // Построение сценариев выполнения задач
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
-const build = gulp.series(reset, mainTasks);
+const build = gulp.series(cleanComponents, gulp.parallel(reset, mainTasks));
 const deployZIP = gulp.series(reset, mainTasks, zip);
 const deployFTP = gulp.series(reset, mainTasks, ftp);
 
