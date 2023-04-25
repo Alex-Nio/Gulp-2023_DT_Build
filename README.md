@@ -161,6 +161,7 @@ Poject
 
 ### Updates:
 
+- Добавлен ESLint и prettier
 - Добавлена подсветка удалений и отдельная команда для чистки от пустых файлов и импортов
   ![Remove Empty](gulp/gide/removeEmpty.jpg)
 
