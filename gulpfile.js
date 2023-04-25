@@ -51,12 +51,14 @@ const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 const build = gulp.series(cleanComponents, gulp.parallel(reset, mainTasks));
 const deployZIP = gulp.series(reset, mainTasks, zip);
 const deployFTP = gulp.series(reset, mainTasks, ftp);
+const removeEmpty = gulp.series(cleanComponents);
 
 // Экспорт сценариев
 export { dev };
 export { build };
 export { deployZIP };
 export { deployFTP };
+export { removeEmpty };
 
 // Выполнение сценария по умолчанию
 gulp.task("default", dev);

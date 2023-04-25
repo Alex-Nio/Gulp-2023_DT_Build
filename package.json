@@ -78,6 +78,7 @@
     "yargs": "^17.7.1"
   },
   "dependencies": {
+    "chalk": "^5.2.0",
     "gulp-clean": "^0.4.0",
     "gulp-filter": "^7.0.0",
     "gulp-inject-string": "^1.1.2"
