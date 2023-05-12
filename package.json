@@ -36,9 +36,12 @@
     "@babel/core": "^7.19.1",
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.19.1",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.5",
     "browser-sync": "^2.27.7",
     "del": "^6.1.1",
+    "eslint": "^8.39.0",
+    "eslint-config-prettier": "^8.8.0",
     "fs": "^0.0.1-security",
     "gh-pages": "^4.0.0",
     "gulp": "^4.0.2",
@@ -46,6 +49,7 @@
     "gulp-autoprefixer": "^8.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
+    "gulp-eslint": "^6.0.0",
     "gulp-file": "^0.4.0",
     "gulp-file-include": "^2.3.0",
     "gulp-fonter": "^0.3.0",
@@ -69,6 +73,7 @@
     "gulp-webp-html-nosvg": "^1.1.1",
     "gulp-webpcss": "^1.1.1",
     "gulp-zip": "^5.1.0",
+    "prettier": "2.8.8",
     "sass": "^1.45.1",
     "swiper": "^7.3.4",
     "vinyl-ftp": "^0.6.1",
@@ -78,6 +83,8 @@
     "yargs": "^17.7.1"
   },
   "dependencies": {
+    "@babel/eslint-parser": "^7.21.3",
+    "chalk": "^5.2.0",
     "gulp-clean": "^0.4.0",
     "gulp-filter": "^7.0.0",
     "gulp-inject-string": "^1.1.2"

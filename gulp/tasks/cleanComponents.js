@@ -3,6 +3,7 @@ import filter from "gulp-filter";
 import clean from "gulp-clean";
 import fs from "fs-extra";
 import path from "path";
+import chalk from "chalk";
 
 export function cleanComponents() {
   const componentsDir = "src/html/components/";
@@ -21,7 +22,7 @@ export function cleanComponents() {
 
         // Если папка пустая, удаляем ее
         if (files.length === 0) {
-          console.log(`Deleted empty directory - ${componentsDir}${component.name}`);
+          console.log(chalk.red.bgBlue.bold(`Удалена пустая папка - ${componentsDir}${component.name}`));
           fs.rmdirSync(`${componentsDir}${component.name}`);
         }
       }
@@ -47,14 +48,12 @@ export function cleanComponents() {
     .on("end", () => {
       // Выводим список компонентов
       const components = fs.readdirSync("src/html/components");
-      console.log("Components:");
+      console.log(chalk.red("Components:"));
       components.forEach((component) => {
         console.log(`- ${component}`);
       });
     })
     .on("finish", () => {
-      console.log("Filtered files:");
-
       gulp
         .src(`${componentsDir}/**/*.{html,js,scss}`)
         .pipe(
@@ -65,7 +64,7 @@ export function cleanComponents() {
         )
         .pipe(clean({ force: true }))
         .on("data", (file) => {
-          console.log(`Удален пустой файл - ${file.path}`);
+          console.log(chalk.red.bgYellow.bold(`Удален пустой файл - ${file.path}`));
 
           const scssConfigPath = "src/styles/scss/config/base/components.scss";
           const scssConfig = fs.readFileSync(scssConfigPath, "utf-8");
@@ -79,7 +78,7 @@ export function cleanComponents() {
             if (fs.existsSync(componentPath)) {
               return match;
             } else {
-              console.log(`Удален импорт - ${match}`);
+              console.log(chalk.red.bgYellow.bold(`Удален импорт - ${match}`));
               return "";
             }
           });
@@ -99,7 +98,7 @@ export function cleanComponents() {
             if (fs.existsSync(componentPath)) {
               return match;
             } else {
-              console.log(`Удален импорт - ${match}`);
+              console.log(chalk.red.bgYellow.bold(`Удален импорт - ${match}`));
               return "";
             }
           });
