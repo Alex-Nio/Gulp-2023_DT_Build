@@ -31,7 +31,7 @@ export const scss = () => {
       )
       .pipe(
         app.plugins.if(
-          app.isBuildDefault || app.isBuildMax || app.isBuildOptimized,
+          app.isBuildMax || app.isBuildOptimized,
           webpcss({
             webpClass: ".webp",
             noWebpClass: ".no-webp"
