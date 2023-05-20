@@ -45,15 +45,15 @@
 }
 
 //? Transitions
-@mixin defaultTransition() {
+@mixin defaultTransition {
 	transition: all 0.3s linear;
 }
 
-@mixin fastTransition() {
+@mixin fastTransition {
 	transition: all 0.1s ease-in-out;
 }
 
-@mixin slowTransition() {
+@mixin slowTransition {
 	transition: all 0.5s linear;
 }
 
@@ -66,7 +66,7 @@
 }
 
 //? Сброс margin первого и последнего
-@mixin reset-horizontal-margin() {
+@mixin reset-horizontal-margin {
 	&:first-child {
 		margin-left: 0;
 	}
@@ -76,7 +76,7 @@
 	}
 }
 
-@mixin reset-vertical-margin() {
+@mixin reset-vertical-margin {
 	&:first-child {
 		margin-top: 0;
 	}

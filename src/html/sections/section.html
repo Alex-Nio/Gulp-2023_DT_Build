@@ -1,41 +1,65 @@
 <section class="test-section">
-  <div class="test-section__container">
-    <h1>This is a test section</h1>
-    <div class="test-section__content">
+  <div class="test-section__content">
 
-      <h2>Images Loading Test</h2>
-      <div class="image-wrapper">
-        <img class="test-section__image" src="./images/logo.png" alt="Test image">
-      </div>
+    <div class="test-section__box">
+      <h2 class="test-section__title">
+        Ширина контейнера: <span class="container-tracker"></span>
+      </h2>
+    </div>
 
-      <h2>Icon-font imports Test:</h2>
-      <div class="test-section__icons">
-        <i class="icon icon-phone"></i>
-        <i class="icon icon-github"></i>
-        <i class="icon icon-mail"></i>
-        <i class="icon icon-telegram"></i>
-      </div>
+    <div class="test-section__box">
+      <h2 class="test-section__title">Подключение изображений:</h2>
+      <br />
+      <img class="test-section__image" src="./images/logo.png" alt="Test image">
+    </div>
 
-      <h2>Other page Test:</h2>
-      <div class="test-section__block">
-        <a href="page.html">To Other Page</a>
-      </div>
+    <div class="test-section__box">
+      <h2 class="test-section__title">Иконочный шрифт:</h2>
+      <br />
+      <ul class="icons-list">
+        <li class="icons-list__item">
+          <i class="icon icon-phone"></i>
+        </li>
+        <li class="icons-list__item">
+          <i class="icon icon-github"></i>
+        </li>
+        <li class="icons-list__item">
+          <i class="icon icon-mail"></i>
+        </li>
+        <li class="icons-list__item">
+          <i class="icon icon-telegram"></i>
+        </li>
+      </ul>
+    </div>
 
-      <h2>Components imports Test:</h2>
-      <div class="test-section__components">
-        @@include('components/component/component.html')
-      </div>
+    <div class="test-section__box">
+      <h2 class="test-section__title">Тест постраничной навигации:</h2>
+      <br />
+      <a href="page.html">Перейти на другую страницу</a>
+    </div>
 
-      <h2>Fonts Test:</h2>
-      <div class="test-section__fonts">
-        <h1>h1 Lorem ipsum dolor sit amet.</h1>
-        <h2>h2 Lorem ipsum dolor sit amet.</h2>
-        <h3>h3 Lorem ipsum dolor sit amet.</h3>
-        <h4>h4 Lorem ipsum dolor sit amet.</h4>
-        <h5>h5 Lorem ipsum dolor sit amet.</h5>
-        <h6>h6 Lorem ipsum dolor sit amet.</h6>
-      </div>
+    <div class="test-section__box">
+      <h2 class="test-section__title">Подключение компонентов в html-документ:</h2>
+      <br />
+      @@include('components/test-component/test-component.html')
+    </div>
 
+    <div class="test-section__box fonts">
+      <h2 class="test-section__title">Проверка семейства шрифтов:</h2>
+      <br />
+      <h1>h1 Lorem ipsum dolor sit amet.</h1>
+      <h2>h2 Lorem ipsum dolor sit amet.</h2>
+      <h3>h3 Lorem ipsum dolor sit amet.</h3>
+      <h4>h4 Lorem ipsum dolor sit amet.</h4>
+      <h5>h5 Lorem ipsum dolor sit amet.</h5>
+      <h6>h6 Lorem ipsum dolor sit amet.</h6>
+    </div>
+
+
+    <div class="test-section__box">
+      <h2 class="test-section__title">Дополнительная информация</h2>
+      <br />
+      <p>Папка <span>Views</span> - папка с другими html страницами</p>
     </div>
   </div>
 </section>

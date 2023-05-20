@@ -1,66 +1,41 @@
-.test-section {
-	&__content {
-		padding: 35px;
-		margin: 40px 0;
-		background-color: #dddbdb;
-		border-radius: 3rem;
-	}
-
-	&__image {
-		width: 120px;
-	}
-
-	&__icons {
-		margin: 40px 0;
-	}
-
-	&__components {
-		margin: 40px 0;
-	}
-
-	&__fonts {
-		margin: 40px 0 20px 0;
-
-		& h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			font-family: $ff_R;
-			margin-bottom: 20px;
-		}
-	}
-
-	&__block {
-		margin: 40px 0;
-		line-height: 100%;
-		font-size: 1.8rem;
-		color: blue;
-	}
-}
-.icon {
-	font-size: 6rem;
-	margin: 0 10px;
-	@include defaultTransition();
-
-	&:hover {
-		color: red;
-		@include defaultTransition();
-		cursor: pointer;
-	}
+* {
+	line-height: 140%;
 }
 
 h1 {
 	font-size: 3.2rem;
+
+	@media screen and (max-width: $tablet) {
+		font-size: 2.8rem;
+	}
+
+	@media screen and (max-width: $mobile) {
+		font-size: 2rem;
+	}
 }
 
 h2 {
 	font-size: 2.8rem;
+
+	@media screen and (max-width: $tablet) {
+		font-size: 2.2rem;
+	}
+
+	@media screen and (max-width: $mobile) {
+		font-size: 1.8rem;
+	}
 }
 
 h3 {
 	font-size: 2.4rem;
+
+	@media screen and (max-width: $tablet) {
+		font-size: 1.8rem;
+	}
+
+	@media screen and (max-width: $mobile) {
+		font-size: 1.4rem;
+	}
 }
 
 h4 {
@@ -84,6 +59,84 @@ h6 {
 	font-weight: bolder;
 }
 
-.image-wrapper {
-	margin: 40px 0;
+// Test component styles
+.test-section {
+	&__content {
+		padding: 35px;
+		margin: 10px 0;
+		background-color: #1d3557;
+		border-radius: 5px;
+
+		@media screen and (max-width: $tablet) {
+			padding: 22px;
+		}
+
+		@media screen and (max-width: $mobile) {
+			padding: 12px;
+		}
+	}
+
+	&__box {
+		padding: 22px;
+		margin: 25px 15px;
+		background-color: #f1faee;
+		border-radius: 5px;
+
+		&.fonts {
+			& h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				font-family: $ff_R;
+				line-height: 100%;
+				margin-bottom: 15px;
+			}
+		}
+
+		& a {
+			font-size: 2.2rem;
+			color: #1d3557;
+
+			&:hover {
+				color: #457b9d;
+			}
+		}
+	}
+
+	&__title {
+		font-family: $ff_R;
+		color: #e63946;
+		font-weight: 900;
+		margin-bottom: 10px;
+	}
+
+	&__image {
+		width: 100%;
+		max-width: 120px;
+	}
+}
+
+.icons-list {
+	@include fdrjs_aic;
+	gap: 12px;
+
+	&__item {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.icon {
+	font-size: 4rem;
+	color: #e63946;
+	@include defaultTransition;
+
+	&:hover {
+		color: #1d3557;
+		cursor: pointer;
+		@include defaultTransition;
+	}
 }

@@ -112,7 +112,7 @@ body {
 // Тип адаптива:
 // 1 = отзывчивость (у контейнера нет брейкпоинтов),
 // 2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам см. _variables.scss)
-$responsiveType: 1;
+$responsiveType: 2;
 
 /*
   (i) Стили будут применяться ко
@@ -143,7 +143,7 @@ $responsiveType: 1;
     }
 
     @media (max-width: $tablet) {
-      max-width: rem(1000);
+      max-width: rem(1052);
       padding: 0 30px;
     }
 
@@ -159,10 +159,6 @@ $responsiveType: 1;
   }
 }
 
-footer {
-  flex-shrink: 0;
-}
-
 h1,
 h2,
 h3,
@@ -170,7 +166,7 @@ h4,
 h5,
 h6,
 p {
-  cursor: default;
+  cursor: default; // сброс стандартного курсора при наведении на заголовок и текст
 }
 
 img {
@@ -184,11 +180,11 @@ a {
   font-family: inherit;
   color: inherit;
   text-decoration: none;
-  @include defaultTransition();
+  @include defaultTransition;
 
   &:hover {
     color: $base_hover;
-    @include defaultTransition();
+    @include defaultTransition;
   }
 }
 
@@ -256,7 +252,7 @@ button {
 }
 
 // Импорты секций
-@import "sections/section";
+@import "sections/section"; // тестовая секция
 
 // Импорты компонентов
 @import "./config/base/components.scss";

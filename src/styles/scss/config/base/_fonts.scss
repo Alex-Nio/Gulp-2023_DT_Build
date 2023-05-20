@@ -1,12 +1,12 @@
-//? Дефолтный шрифт для тестов
+//? Дефолтный шрифт для тестов - удалить
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 //? Пример подключения
 // @font-face {
-// 	font-family: "Ubuntu 500";
+// 	font-family: "Ваш_шрифт";
 // 	font-style: normal;
 // 	font-weight: 500;
 // 	font-display: swap;
-// 	src: url("../fonts/ubuntu-v14-latin-ext_latin_cyrillic-ext_cyrillic-500.woff2") format("woff2"),
-// 		url("../fonts/ubuntu-v14-latin-ext_latin_cyrillic-ext_cyrillic-500.woff") format("woff");
+// 	src: url("../fonts/Ваш_шрифт.woff2") format("woff2"),
+// 		url("../fonts/Ваш_шрифт.woff") format("woff");
 // }

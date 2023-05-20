@@ -1,2 +1,2 @@
-import '../../html/components/component/component.js';
-import '../../html/components/header/header.js';
+/* eslint-disable */
+import '../../html/components/test-component/test-component.js';

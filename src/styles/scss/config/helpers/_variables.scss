@@ -31,14 +31,14 @@ $eb: 800; // Extra Bold
 $bl: 900; // Super
 
 //? Размеры
+$maxWidthContainer: 1920px; // Ширина контейнера (0 = нет ограничения)
 $minWidth: 320px; // Минимальная ширина страницы
-$maxWidthContainer: 1170px; // Ширина контейнера (0 = нет ограничения)
 $containerPadding: 16px; // Отступы контейнера // (32 = по 16px слева и справа, 0 = нет отступа)
 $containerWidth: $maxWidthContainer + $containerPadding; // Ширина срабатывания первого брейкпоинта
-$headerHeight: 96px; // Высота отступа контента от header
+$headerHeight: 55px; // Высота отступа контента от header
 
 //? Брейк-поинты
 $pc: 1199px; // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
 $tablet: 992px; // Планшеты, некоторые телефоны в горизонтальном положении
 $mobile: 767px; // Телефоны L
-$mobileSmall: 340px; // Телефоны S
+$mobileSmall: 320px; // Телефоны S
