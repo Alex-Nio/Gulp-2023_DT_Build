@@ -143,7 +143,7 @@ h6 {
 
 .swiper {
 	width: 100%;
-	height: 420px;
+	@include adaptive-value("height", 420, 220, 1);
 	border-radius: 5px;
 
 	& .swiper-slide {

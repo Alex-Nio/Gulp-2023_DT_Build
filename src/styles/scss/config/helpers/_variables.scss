@@ -31,14 +31,22 @@ $eb: 800; // Extra Bold
 $bl: 900; // Super
 
 //? Размеры
-$maxWidthContainer: 1920px; // Ширина контейнера (0 = нет ограничения)
-$minWidth: 320px; // Минимальная ширина страницы
-$containerPadding: 16px; // Отступы контейнера // (32 = по 16px слева и справа, 0 = нет отступа)
-$containerWidth: $maxWidthContainer + $containerPadding; // Ширина срабатывания первого брейкпоинта
-$headerHeight: 55px; // Высота отступа контента от header
+// Ширина полотна (макета)
+$maxWidth: 1920;
+// Ширина контейнера (0 = нет ограничения)
+$maxWidthContainer: 1280;
+// Минимальная ширина страницы
+$minWidth: 320px;
+// Общий отступ у контейнера
+// (32px = по 16px слева и справа, 0 = нет отступа)
+$containerPadding: 16px;
+// Ширина срабатывания первого брейкпоинта
+$containerWidth: $maxWidthContainer + $containerPadding;
+// Высота отступа контента от header
+$headerHeight: 55px;
 
 //? Брейк-поинты
 $pc: 1199px; // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
 $tablet: 992px; // Планшеты, некоторые телефоны в горизонтальном положении
 $mobile: 767px; // Телефоны L
-$mobileSmall: 320px; // Телефоны S
+$mobileSmall: 480px; // Телефоны S
