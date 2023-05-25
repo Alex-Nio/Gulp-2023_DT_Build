@@ -140,3 +140,29 @@ h6 {
 		@include defaultTransition;
 	}
 }
+
+.swiper {
+	width: 100%;
+	height: 420px;
+	border-radius: 5px;
+
+	& .swiper-slide {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@include adaptive-value("font-size", 44, 22, 1);
+		background-color: #b8dacb;
+		color: $black;
+	}
+}
+
+.nav-btn {
+	padding: 12px 32px;
+	background-color: #457b9d;
+	color: $white;
+
+	&:hover {
+		background-color: #e63946;
+		color: #f1faee;
+	}
+}

@@ -77,18 +77,18 @@
     "prettier": "2.8.8",
     "sass": "^1.45.1",
     "style-loader": "^3.3.3",
-    "swiper": "^7.3.4",
     "vinyl-ftp": "^0.6.1",
     "webp-converter": "2.2.3",
     "webpack": "^5.65.0",
     "webpack-stream": "^7.0.0",
-    "yargs": "^17.7.1"
-  },
-  "dependencies": {
+    "yargs": "^17.7.1",
     "@babel/eslint-parser": "^7.21.3",
     "chalk": "^5.2.0",
     "gulp-clean": "^0.4.0",
     "gulp-filter": "^7.0.0",
     "gulp-inject-string": "^1.1.2"
+  },
+  "dependencies": {
+    "swiper": "^9.3.2"
   }
 }
