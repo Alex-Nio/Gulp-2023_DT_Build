@@ -137,24 +137,28 @@ $responsiveType: 2;
 // По брейк-поинтам
 @else {
   [class*="__container"] {
+    // макс ширина контейнера + padding
     @media (max-width: $pc) {
-      max-width: rem(1190);
+      max-width: rem(1104);
       padding: 0 30px;
     }
 
+    // макс ширина контейнера + padding
     @media (max-width: $tablet) {
       max-width: rem(980);
       padding: 0 30px;
     }
 
+    // макс ширина контейнера + padding
     @media (max-width: $mobile) {
-      max-width: rem(640);
+      max-width: rem(728);
       padding: 0 20px;
     }
 
+    // макс ширина контейнера - padding
     @media (max-width: $mobileSmall) {
-      max-width: rem(320);
-      padding: 0 10px;
+      max-width: rem(280);
+      padding: 0 16px;
     }
   }
 }
