@@ -1,5 +1,6 @@
-import webp from "gulp-webp";
-import imagemin from "gulp-imagemin";
+/* eslint-disable */
+import webp from 'gulp-webp';
+import imagemin from 'gulp-imagemin';
 
 export const images = () => {
   return app.gulp
@@ -7,16 +8,26 @@ export const images = () => {
     .pipe(
       app.plugins.plumber(
         app.plugins.notify.onError({
-          title: "IMAGES",
-          message: "Error: <%= error.message %>"
+          title: 'IMAGES',
+          message: 'Error: <%= error.message %>',
         })
       )
     )
     .pipe(app.plugins.newer(app.path.build.images))
     .pipe(app.plugins.if(app.isBuildMax, webp()))
     .pipe(app.plugins.if(app.isBuildMax, app.gulp.dest(app.path.build.images)))
-    .pipe(app.plugins.if(app.isBuildMax || app.isBuildOptimized, app.gulp.src(app.path.src.images)))
-    .pipe(app.plugins.if(app.isBuildOptimized, app.plugins.newer(app.path.build.images)))
+    .pipe(
+      app.plugins.if(
+        app.isBuildMax || app.isBuildOptimized,
+        app.gulp.src(app.path.src.images)
+      )
+    )
+    .pipe(
+      app.plugins.if(
+        app.isBuildOptimized,
+        app.plugins.newer(app.path.build.images)
+      )
+    )
     .pipe(
       app.plugins.if(
         app.isBuildOptimized,
@@ -24,7 +35,7 @@ export const images = () => {
           progressive: true,
           svgoPlugins: [{ removeViewBox: false }],
           interlaced: true,
-          optimizationLevel: 4 // 0 to 7
+          optimizationLevel: 4, // 0 to 7
         })
       )
     )

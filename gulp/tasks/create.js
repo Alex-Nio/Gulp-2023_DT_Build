@@ -1,3 +1,4 @@
+/* eslint-disable */
 import gulp from 'gulp';
 import file from 'gulp-file';
 import inject from 'gulp-inject-string';

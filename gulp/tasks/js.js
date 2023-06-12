@@ -1,5 +1,6 @@
-import webpack from "webpack-stream";
-import { webpackConfig } from "../../webpack.config.js";
+/* eslint-disable */
+import webpack from 'webpack-stream';
+import { webpackConfig } from '../../webpack.config.js';
 
 export const js = () =>
   app.gulp
@@ -7,8 +8,8 @@ export const js = () =>
     .pipe(
       app.plugins.plumber(
         app.plugins.notify.onError({
-          title: "JS",
-          message: "Error: <%= error.message %>"
+          title: 'JS',
+          message: 'Error: <%= error.message %>',
         })
       )
     )

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import gulp from 'gulp';
 import filter from 'gulp-filter';
 import clean from 'gulp-clean';

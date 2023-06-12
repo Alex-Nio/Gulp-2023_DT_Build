@@ -1,6 +1,7 @@
-import fs from "fs";
-import fonter from "gulp-fonter";
-import ttf2woff2 from "gulp-ttf2woff2";
+/* eslint-disable */
+import fs from 'fs';
+import fonter from 'gulp-fonter';
+import ttf2woff2 from 'gulp-ttf2woff2';
 
 export const otfToTtf = () => {
   // Ищем файлы шрифтов .otf
@@ -10,13 +11,13 @@ export const otfToTtf = () => {
       .pipe(
         app.plugins.plumber(
           app.plugins.notify.onError({
-            title: "FONTS",
-            message: "Error: <%= error.message %>"
+            title: 'FONTS',
+            message: 'Error: <%= error.message %>',
           })
         )
       )
       // Конвертируем в .ttf
-      .pipe(fonter({ formats: ["ttf"] }))
+      .pipe(fonter({ formats: ['ttf'] }))
       // Выгружаем в исходную папку
       .pipe(app.gulp.dest(`${app.path.srcFolder}/fonts/`))
   );
@@ -30,13 +31,13 @@ export const ttfToWoff = () => {
       .pipe(
         app.plugins.plumber(
           app.plugins.notify.onError({
-            title: "FONTS",
-            message: "Error: <%= error.message %>"
+            title: 'FONTS',
+            message: 'Error: <%= error.message %>',
           })
         )
       )
       // конвертируем в .woff
-      .pipe(fonter({ formats: ["woff"] }))
+      .pipe(fonter({ formats: ['woff'] }))
       // выгружаем в папку с результатом
       .pipe(app.gulp.dest(`${app.path.build.fonts}`))
       // ищем файлы шрифтов .ttf
@@ -46,7 +47,11 @@ export const ttfToWoff = () => {
       // выгружаем в папку с результатом
       .pipe(app.gulp.dest(`${app.path.build.fonts}`))
       // Ищем файлы шрифтов .woff, woff2, eot, svg
-      .pipe(app.gulp.src(`${app.path.srcFolder}/assets/fonts/*.{woff,woff2,eot,svg}`))
+      .pipe(
+        app.gulp.src(
+          `${app.path.srcFolder}/assets/fonts/*.{woff,woff2,eot,svg}`
+        )
+      )
       // Выгружаем в папку с результатом
       .pipe(app.gulp.dest(`${app.path.build.fonts}`))
   );
