@@ -1,20 +1,37 @@
-import * as pathNode from "path";
+import * as pathNode from 'path';
+import fs from 'fs';
 
-const srcFolder = "src";
-const builFolder = "dist";
+const srcFolder = 'src';
+const builFolder = 'dist';
 
 const path = {
   src: pathNode.resolve(srcFolder),
-  build: pathNode.resolve(builFolder)
+  build: pathNode.resolve(builFolder),
 };
 
-export const webpackConfig = isMode => ({
-  entry: ["@babel/polyfill", `${path.src}/styles/js/main.js`],
-  mode: isMode ? "development" : "production",
+const getPageEntries = () => {
+  const pagesPath = pathNode.resolve(`${path.src}/styles/js/pages`);
+  const pages = fs.readdirSync(pagesPath);
+  const pageEntries = {};
+
+  pages.forEach((page) => {
+    const pageName = page.split('.').slice(0, -1).join('.');
+    pageEntries[pageName] = pathNode.resolve(`${pagesPath}/${page}`);
+  });
+
+  return pageEntries;
+};
+
+export const webpackConfig = (isMode) => ({
+  entry: {
+    ...getPageEntries(),
+    // main: ['@babel/polyfill', `${path.src}/styles/js/main.js`],
+  },
+  mode: isMode ? 'development' : 'production',
   output: {
     path: `${path.build}/js`,
-    filename: "app.min.js",
-    publicPath: "/"
+    filename: '[name].min.js',
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -22,19 +39,19 @@ export const webpackConfig = isMode => ({
         test: /\.m?js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
-            presets: ["@babel/preset-env"]
-          }
+            presets: ['@babel/preset-env'],
+          },
         },
         resolve: {
-          fullySpecified: false
-        }
+          fullySpecified: false,
+        },
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
-      }
-    ]
-  }
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
 });
