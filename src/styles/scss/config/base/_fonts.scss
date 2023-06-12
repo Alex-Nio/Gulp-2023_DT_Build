@@ -1,12 +1,16 @@
-//? Дефолтный шрифт для тестов - удалить
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+/* stylelint-disable */
+//? Миксин для подключения шрифтов
+//* Подробнее: https://developer.mozilla.org/ru/docs/Web/CSS/font-family
 
-//? Пример подключения
-// @font-face {
-// 	font-family: "Ваш_шрифт";
-// 	font-style: normal;
-// 	font-weight: 500;
-// 	font-display: swap;
-// 	src: url("../fonts/Ваш_шрифт.woff2") format("woff2"),
-// 		url("../fonts/Ваш_шрифт.woff") format("woff");
-// }
+@mixin font-face($font-family, $url, $weight, $style) {
+  @font-face {
+    font-family: "#{$font-family}, sans-serif";
+    src: url("../fonts/#{$url}.woff") format("woff"), url("../fonts/#{$url}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-display: swap;
+    font-style: $style;
+  }
+}
+
+//? Подключение шрифтов
+// @include font-face("Ваш шрифт", "Ваш шрифт", 400, normal);

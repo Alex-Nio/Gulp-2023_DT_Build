@@ -139,11 +139,11 @@ Poject
 
 - Минифицирует только css и html файлы. Всё остальное собирает без вмешательства.
 
-#### `gulp create-component --name my-component`
+#### `gulp create-component --name my-component --page page-name`
 
 Создание файлов компонента:
 
-- Этот таск позволяет создавать новые компоненты для проекта. Для использования таска необходимо выполнить команду `gulp create-component --name my-component`, где **my-component** - имя компонента.
+- Этот таск позволяет создавать новые компоненты для проекта. Для использования таска необходимо выполнить команду `gulp create-component --name my-component --page page-name`, где **my-component** - имя компонента, а **page-name** - название страницы.
 
 - Таск создает три файла: my-component.html, my-component.scss и my-component.js. Файлы будут созданы в директории `src/html/components/my-component`
 

@@ -41,11 +41,6 @@
   }
 }
 
-html {
-  font-size: 62.5%;
-  // scroll-behavior: smooth; // Если нужен плавный скролл до якоря
-}
-
 body {
   display: flex;
   flex-direction: column;
@@ -99,68 +94,6 @@ body {
 // Отступ контентной части от шапки сайта
 .page {
   margin-top: $headerHeight;
-}
-
-//! Контейнер
-[class*="__container"] {
-  max-width: $maxWidthContainer + $containerPadding * 2;
-  margin: 0 auto;
-  padding: 0 $containerPadding;
-}
-
-// Ограничивающий контейнер
-// Тип адаптива:
-// 1 = отзывчивость (у контейнера нет брейкпоинтов),
-// 2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам см. _variables.scss)
-$responsiveType: 2;
-
-/*
-  (i) Стили будут применяться ко
-  всем классам содержащим *__container
-  Например header__container, main__container и т.д.
-*/
-
-// Отзывчивая
-@if ($responsiveType == 1) {
-  [class*="__container"] {
-    @if ($maxWidthContainer > 0) {
-      max-width: rem($maxWidthContainer);
-      margin: 0 auto;
-    }
-
-    @if ($containerPadding > 0) {
-      padding: 0 math.div($containerPadding, 2);
-    }
-  }
-}
-
-// По брейк-поинтам
-@else {
-  [class*="__container"] {
-    // макс ширина контейнера + padding
-    @media (max-width: $pc) {
-      max-width: rem(1104);
-      padding: 0 30px;
-    }
-
-    // макс ширина контейнера + padding
-    @media (max-width: $tablet) {
-      max-width: rem(980);
-      padding: 0 30px;
-    }
-
-    // макс ширина контейнера + padding
-    @media (max-width: $mobile) {
-      max-width: rem(728);
-      padding: 0 20px;
-    }
-
-    // макс ширина контейнера - padding
-    @media (max-width: $mobileSmall) {
-      max-width: rem(280);
-      padding: 0 16px;
-    }
-  }
 }
 
 h1,
@@ -254,9 +187,3 @@ button {
     visibility: visible;
   }
 }
-
-// Импорты секций
-@import "sections/section"; // тестовая секция
-
-// Импорты компонентов
-@import "./config/base/components.scss";

@@ -1,3 +1,4 @@
+/* eslint-disable */
 export const variables = {
   firstName: 'John',
   lastName: 'Doe',

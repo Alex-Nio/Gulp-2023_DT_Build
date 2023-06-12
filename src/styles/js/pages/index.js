@@ -1,7 +1,7 @@
-/* eslint-disable */
-import '../../../html/components/test-component/test-component.js';
 import { variables } from '../core/variables';
 import { functions } from '../core/exports';
+import '../../../html/components/first/first.js';
+import '../../../html/components/second/second.js';
 
 functions.sayHelloWorld(); // Вызов функции sayHelloWorld
 functions.sayGoodbye(); // Вызов функции sayGoodbye
