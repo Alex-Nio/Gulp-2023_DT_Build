@@ -1,12 +1,13 @@
+/* eslint-disable */
 import * as pathNode from 'path';
 import fs from 'fs';
 
 const srcFolder = 'src';
-const builFolder = 'dist';
+const buildFolder = 'dist';
 
 const path = {
   src: pathNode.resolve(srcFolder),
-  build: pathNode.resolve(builFolder),
+  build: pathNode.resolve(buildFolder),
 };
 
 const getPageEntries = () => {

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import gulp from 'gulp'; // Основной модуль
 import { path } from './gulp/config/path.js'; // Импорт путей
 import { plugins } from './gulp/config/plugins.js'; // Импорт общих плагинов
@@ -28,7 +29,8 @@ import { otfToTtf, ttfToWoff } from './gulp/tasks/fonts.js';
 import { svgSprive } from './gulp/tasks/svgSprive.js';
 import { zip } from './gulp/tasks/zip.js';
 import { ftp } from './gulp/tasks/ftp.js';
-import { createComponent } from './gulp/tasks/create.js';
+// import { createPage } from './gulp/tasks/createPage.js';
+import { createComponent } from './gulp/tasks/createComponent.js';
 import { cleanComponents } from './gulp/tasks/cleanComponents.js';
 import { linter } from './gulp/tasks/linter.js';
 

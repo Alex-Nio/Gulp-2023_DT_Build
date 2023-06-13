@@ -1,6 +1,6 @@
-@import "config/libs/reset.scss";
-@import "config/helpers/_variables.scss";
-@import "config/helpers/_functions.scss";
-@import "config/helpers/_mixins.scss";
-@import "config/libs/iconfont.scss"; // удалить если не нужно + убрать шрифты из папки assets/fonts
-@import "config/base/_fonts.scss";
+@import "../config/libs/reset.scss";
+@import "../config/helpers/_variables.scss";
+@import "../config/helpers/_functions.scss";
+@import "../config/helpers/_mixins.scss";
+@import "../config/libs/iconfont.scss"; // удалить если не нужно + убрать шрифты из папки assets/fonts
+@import "../config/base/_fonts.scss";

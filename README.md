@@ -139,19 +139,22 @@ Poject
 
 - Минифицирует только css и html файлы. Всё остальное собирает без вмешательства.
 
-#### `gulp create-component --name my-component --page page-name`
+### Создание файлов компонента:
 
-Создание файлов компонента:
+#### **Вариант 1:** `gulp create-component --name my-component`
+#### **Вариант 2:** `gulp create-component --name my-component --page page-name`
 
-- Этот таск позволяет создавать новые компоненты для проекта. Для использования таска необходимо выполнить команду `gulp create-component --name my-component --page page-name`, где **my-component** - имя компонента, а **page-name** - название страницы.
+- Эти команды позволяет создавать новые компоненты для проекта. Для использования таска необходимо выполнить команду `gulp create-component --name my-component --page page-name`, где **my-component** - имя компонента, а **page-name** - название страницы.
 
-- Таск создает три файла: my-component.html, my-component.scss и my-component.js. Файлы будут созданы в директории `src/html/components/my-component`
+- Таск создает три файла: my-component.html, my-component.scss и my-component.js. Файлы будут созданы в директории `src/html/components`
 
-- Все импорты теперь добавляются автоматически, scss файлы компонента добавляются в `base/components.scss`, а js файлы в `js/imports.js`
+- Все импорты теперь добавляются автоматически, scss файлы компонента добавляются в `scss/pages/имя_страницы.scss`, а js файлы в `js/pages/имя_страницы.js`
 
 - Важно убедиться, что директория `src/html/components` уже существует, иначе таск не выполнится.
 
 - Если имя компонента не будет указано при вызове команды, то будет выведено сообщение об ошибке "Component name is not provided!" и таск завершится без создания файлов.
+
+- Если имя страницы не будет указано при вызове команды, то компонент будет создан без импортирования файлов компонента в файлы страницы.
 
 #### `gulp removeEmpty`
 
