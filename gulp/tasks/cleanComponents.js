@@ -36,6 +36,8 @@ export function cleanComponents() {
     });
   }
 
+  const emptyLineRegex = /^\s*$/gm; // Перемещаем определение сюда
+
   return gulp
     .src(`${componentsDir}/**/*.{html,js,scss}`)
     .pipe(htmlFilter)
@@ -124,7 +126,8 @@ export function cleanComponents() {
 
             // Регулярное выражение для поиска импортов компонентов с расширением .js
             const jsImportRegex =
-              /import\s+\{[^}]+\}\s+from\s+'(\.\.\/)*html\/components\/([\w-]+)\/([\w-]+)\.js';/g;
+              /import\s+(['"])(?:\.\.\/)*html\/components\/([\w-]+)\/([\w-]+)\.js\1;/g;
+
             updatedJsPageContent = updatedJsPageContent.replace(
               jsImportRegex,
               (match, relativePath, component, file) => {
@@ -144,6 +147,11 @@ export function cleanComponents() {
                   return '';
                 }
               }
+            );
+
+            updatedJsPageContent = updatedJsPageContent.replace(
+              emptyLineRegex,
+              ''
             );
 
             fs.writeFileSync(jsPageFile, updatedJsPageContent);

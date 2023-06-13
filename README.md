@@ -139,12 +139,22 @@ Poject
 
 - Минифицирует только css и html файлы. Всё остальное собирает без вмешательства.
 
+### Создание файлов страниц:
+
+#### `gulp create-page --name page`
+
+- Эта команда позволяет создавать новые страницы для проекта.
+- Для использования таска выполните команду `gulp create-page --name page`, где **page** - название страницы.
+
+- Таск создает три файла: page.html, my-component.scss и page.js. Файлы будут созданы в директориях `src/html/views`, `src/html/styles/scss/pages` и `src/html/styles/js/pages`
+
 ### Создание файлов компонента:
 
 #### **Вариант 1:** `gulp create-component --name my-component`
 #### **Вариант 2:** `gulp create-component --name my-component --page page-name`
 
-- Эти команды позволяет создавать новые компоненты для проекта. Для использования таска необходимо выполнить команду `gulp create-component --name my-component --page page-name`, где **my-component** - имя компонента, а **page-name** - название страницы.
+- Эти команды позволяет создавать новые компоненты для проекта.
+- Для использования таска необходимо выполнить команду `gulp create-component --name my-component --page page-name`, где **my-component** - имя компонента, а **page-name** - название страницы.
 
 - Таск создает три файла: my-component.html, my-component.scss и my-component.js. Файлы будут созданы в директории `src/html/components`
 

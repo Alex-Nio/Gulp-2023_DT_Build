@@ -29,7 +29,7 @@ import { otfToTtf, ttfToWoff } from './gulp/tasks/fonts.js';
 import { svgSprive } from './gulp/tasks/svgSprive.js';
 import { zip } from './gulp/tasks/zip.js';
 import { ftp } from './gulp/tasks/ftp.js';
-// import { createPage } from './gulp/tasks/createPage.js';
+import { createPage } from './gulp/tasks/createPage.js';
 import { createComponent } from './gulp/tasks/createComponent.js';
 import { cleanComponents } from './gulp/tasks/cleanComponents.js';
 import { linter } from './gulp/tasks/linter.js';
@@ -72,3 +72,4 @@ export { removeEmpty };
 gulp.task('default', dev);
 // Создание компонента по команде: gulp create-component --name my-component, где my-component - это имя компонента, которое вы хотите создать
 gulp.task('create-component', createComponent);
+gulp.task('create-page', createPage);
