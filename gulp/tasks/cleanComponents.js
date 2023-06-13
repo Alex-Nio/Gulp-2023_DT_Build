@@ -5,6 +5,7 @@ import clean from 'gulp-clean';
 import fs from 'fs-extra';
 import path from 'path';
 import chalk from 'chalk';
+import * as glob from 'glob';
 
 export function cleanComponents() {
   const componentsDir = 'src/html/components/';
@@ -73,70 +74,80 @@ export function cleanComponents() {
           console.log(
             chalk.red.bgYellow.bold(`Удален пустой файл - ${file.path}`)
           );
+        })
+        .on('end', () => {
+          // Выводим список компонентов
+          const components = fs.readdirSync('src/html/components');
+          console.log(chalk.red('Components:'));
+          components.forEach((component) => {
+            console.log(`- ${component}`);
+          });
 
-          const scssConfigPath = 'src/styles/scss/config/base/components.scss';
-          const scssConfig = fs.readFileSync(scssConfigPath, 'utf-8');
+          // Поиск и удаление неиспользуемых импортов в файлах страниц
+          const pageFiles = glob.sync('src/styles/scss/pages/**/*.scss');
+          pageFiles.forEach((pageFile) => {
+            const pageContent = fs.readFileSync(pageFile, 'utf8');
+            let updatedPageContent = pageContent;
 
-          // Регулярное выражение для поиска импортов с расширением .scss
-          const importRegex =
-            /@import\s+(["'])\.\.\/\.\.\/html\/components\/([\w-]+)\/([\w-]+)\.scss\1;/g;
-
-          // Поиск и удаление импортов удаленных файлов scss
-          let newConfig = scssConfig.replace(
-            importRegex,
-            (match, p1, component, file) => {
-              const componentPath = path.join(
-                'src',
-                'html',
-                'components',
-                component,
-                `${file}.scss`
-              );
-              if (fs.existsSync(componentPath)) {
-                return match;
-              } else {
-                console.log(
-                  chalk.red.bgYellow.bold(`Удален импорт - ${match}`)
+            // Регулярное выражение для поиска импортов компонентов с расширением .scss
+            const scssImportRegex =
+              /@import\s+(["'])\.\.\/\.\.\/\.\.\/html\/components\/([\w-]+)\/([\w-]+)\.scss\1;/g;
+            updatedPageContent = updatedPageContent.replace(
+              scssImportRegex,
+              (match, p1, component, file) => {
+                const componentPath = path.join(
+                  'src',
+                  'html',
+                  'components',
+                  component,
+                  `${file}.scss`
                 );
-                return '';
+                if (fs.existsSync(componentPath)) {
+                  return match;
+                } else {
+                  console.log(
+                    chalk.red.bgYellow.bold(`Удален импорт - ${match}`)
+                  );
+                  return '';
+                }
               }
-            }
-          );
+            );
 
-          // Перезапись файла components.scss
-          fs.writeFileSync(scssConfigPath, newConfig);
+            fs.writeFileSync(pageFile, updatedPageContent);
+          });
 
-          const jsImportsPath = 'src/styles/js/imports.js';
-          const jsImports = fs.readFileSync(jsImportsPath, 'utf-8');
+          // Поиск и удаление неиспользуемых импортов в файлах JavaScript страниц
+          const jsPageFiles = glob.sync('src/styles/js/pages/**/*.js');
+          jsPageFiles.forEach((jsPageFile) => {
+            const jsPageContent = fs.readFileSync(jsPageFile, 'utf8');
+            let updatedJsPageContent = jsPageContent;
 
-          // Регулярное выражение для поиска импортов с расширением .js
-          const jsImportRegex =
-            /import\s+(["'])\.\.\/\.\.\/html\/components\/([\w-]+)\/([\w-]+)\.js\1;/g;
-
-          // Поиск и удаление импортов удаленных файлов js
-          let newJsImports = jsImports.replace(
-            jsImportRegex,
-            (match, p1, component, file) => {
-              const componentPath = path.join(
-                'src',
-                'html',
-                'components',
-                component,
-                `${file}.js`
-              );
-              if (fs.existsSync(componentPath)) {
-                return match;
-              } else {
-                console.log(
-                  chalk.red.bgYellow.bold(`Удален импорт - ${match}`)
+            // Регулярное выражение для поиска импортов компонентов с расширением .js
+            const jsImportRegex =
+              /import\s+\{[^}]+\}\s+from\s+'(\.\.\/)*html\/components\/([\w-]+)\/([\w-]+)\.js';/g;
+            updatedJsPageContent = updatedJsPageContent.replace(
+              jsImportRegex,
+              (match, relativePath, component, file) => {
+                const componentPath = path.join(
+                  'src',
+                  'html',
+                  'components',
+                  component,
+                  `${file}.js`
                 );
-                return '';
+                if (fs.existsSync(componentPath)) {
+                  return match;
+                } else {
+                  console.log(
+                    chalk.red.bgYellow.bold(`Удален импорт - ${match}`)
+                  );
+                  return '';
+                }
               }
-            }
-          );
+            );
 
-          // Перезапись файла imports.js
-          fs.writeFileSync(jsImportsPath, newJsImports);
+            fs.writeFileSync(jsPageFile, updatedJsPageContent);
+          });
         })
         .on('data', () => {
           removeEmpty();
