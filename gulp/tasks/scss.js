@@ -6,13 +6,20 @@ import cleanCss from 'gulp-clean-css'; // Сжатие CSS файла
 import webpcss from 'gulp-webpcss'; // Вывод WEBP изображений
 import autoPrefixer from 'gulp-autoprefixer'; // Добавление вендорных префиксов
 import groupCssMediaQueries from 'gulp-group-css-media-queries'; // Группировка медиа запросов
-
+import path from 'path';
+import * as glob from 'glob';
 const sass = gulpSass(dartSass);
 
 export const scss = () => {
+  const pageFolders = glob.sync(`src/styles/scss/pages/*/`);
+  const mainFiles = pageFolders.map((folder) => {
+    const folderName = path.basename(folder);
+    return `${folder}/${folderName}.scss`;
+  });
+
   return (
     app.gulp
-      .src(app.path.src.scss, { sourcemaps: app.isBuildDefault })
+      .src(mainFiles, { sourcemaps: app.isBuildDefault })
       .pipe(
         app.plugins.plumber(
           app.plugins.notify.onError({
@@ -65,7 +72,12 @@ export const scss = () => {
           cleanCss()
         )
       )
-      .pipe(rename({ extname: '.min.css' }))
+      .pipe(
+        rename((file) => {
+          file.dirname = ''; // Удаляем имя папки
+          file.extname = '.min.css'; // Меняем расширение файла
+        })
+      )
       .pipe(app.gulp.dest(app.path.build.css))
       .pipe(app.plugins.browserSync.stream())
   );

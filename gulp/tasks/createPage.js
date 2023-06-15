@@ -9,7 +9,7 @@ export const createPage = () => {
     : '';
 
   if (!pageName) {
-    console.error('Page name is not provided!');
+    console.error('Название страницы не указано!');
     return;
   }
 
@@ -23,15 +23,34 @@ export const createPage = () => {
 
   // Создать файл страницы HTML
   fs.writeFileSync(pageFilePath, '');
+  console.log(
+    chalk.green(`\nСоздана страница '${pageName}' в папке '${pageFolderPath}'`)
+  );
 
   // Добавить импорт в файл страницы SCSS
-  const pageScssFolderPath = path.join('src', 'styles', 'scss', 'pages');
+  const pageScssFolderPath = path.join(
+    'src',
+    'styles',
+    'scss',
+    'pages',
+    `${pageName}`
+  );
   const pageScssFilePath = path.join(pageScssFolderPath, `${pageName}.scss`);
-  const importScssStatement = `@import "./../config/main.scss";`;
+  const importScssStatement = `@import "./../../config/main.scss";`;
 
   // Создать папку с именем страницы в SCSS, если она не существует
   if (!fs.existsSync(pageScssFolderPath)) {
     fs.mkdirSync(pageScssFolderPath, { recursive: true });
+  }
+
+  // Создать папку "sections" внутри папки страницы SCSS, если она не существует
+  const sectionsFolderPath = path.join(pageScssFolderPath, 'sections');
+
+  if (!fs.existsSync(sectionsFolderPath)) {
+    fs.mkdirSync(sectionsFolderPath, { recursive: true });
+    console.log(
+      chalk.green(`Создана папка 'sections' внутри SCSS директории страницы`)
+    );
   }
 
   // Создать файл страницы SCSS, если он не существует
@@ -39,10 +58,15 @@ export const createPage = () => {
     fs.writeFileSync(pageScssFilePath, importScssStatement);
   }
 
-  console.log(chalk.green(`Import statement added to '${pageName}.scss'`));
+  console.log(
+    chalk.green(
+      `Создан SCSS файл страницы '${pageName}.scss' в директории '${pageScssFolderPath}'`
+    )
+  );
 
   // Добавить импорт в файл страницы JS
   const pageJsFolderPath = path.join('src', 'styles', 'js', 'pages');
+
   const pageJsFilePath = path.join(pageJsFolderPath, `${pageName}.js`);
 
   // Создать папку с именем страницы в JS, если она не существует
@@ -55,7 +79,11 @@ export const createPage = () => {
     fs.writeFileSync(pageJsFilePath, '');
   }
 
-  console.log(chalk.green(`Import statement added to '${pageName}.js'`));
+  console.log(
+    chalk.green(
+      `Создан JavaScript файл страницы '${pageName}.js' в директории '${pageJsFolderPath}\n'`
+    )
+  );
 
   return Promise.resolve();
 };

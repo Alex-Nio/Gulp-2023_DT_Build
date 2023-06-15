@@ -24,7 +24,7 @@ export const path = {
     pages: `${srcFolder}/html/views/*.html`,
     js: `${srcFolder}/styles/js/**/*.js`,
     componentsJs: `${srcFolder}/html/components/**/*.js`,
-    scss: `${srcFolder}/styles/scss/pages/*.scss`,
+    scss: `${srcFolder}/styles/scss/pages/**/*.scss`,
     componentsScss: `${srcFolder}/html/components/**/*.scss`,
     files: `${srcFolder}/files/**/*.*`,
   },

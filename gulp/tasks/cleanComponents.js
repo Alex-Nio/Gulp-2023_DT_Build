@@ -7,7 +7,7 @@ import path from 'path';
 import chalk from 'chalk';
 import * as glob from 'glob';
 
-export function cleanComponents() {
+export async function cleanComponents() {
   const componentsDir = 'src/html/components/';
   const components = fs.readdirSync(componentsDir, { withFileTypes: true });
 

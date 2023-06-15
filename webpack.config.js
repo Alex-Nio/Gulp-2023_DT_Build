@@ -26,7 +26,6 @@ const getPageEntries = () => {
 export const webpackConfig = (isMode) => ({
   entry: {
     ...getPageEntries(),
-    // main: ['@babel/polyfill', `${path.src}/styles/js/main.js`],
   },
   mode: isMode ? 'development' : 'production',
   output: {

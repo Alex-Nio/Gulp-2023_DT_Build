@@ -16,7 +16,7 @@ export const createComponent = () => {
     : '';
 
   if (!componentName) {
-    console.error('Component name is not provided!');
+    console.error('Название компонента не указано!');
     return;
   }
 
@@ -39,7 +39,7 @@ export const createComponent = () => {
   // Добавить импорт стилей компонента в файл страницы
   if (pageName) {
     const pageScssFilePath = path.join(
-      'src/styles/scss/pages',
+      `src/styles/scss/pages/${pageName}`,
       `${pageName}.scss`
     );
     const pageJsFilePath = path.join('src/styles/js/pages', `${pageName}.js`);
@@ -47,7 +47,7 @@ export const createComponent = () => {
     // Добавить импорт стилей компонента в файл страницы
     if (pageName) {
       const pageScssFilePath = path.join(
-        'src/styles/scss/pages',
+        `src/styles/scss/pages/${pageName}`,
         `${pageName}.scss`
       );
 
@@ -77,11 +77,11 @@ export const createComponent = () => {
         fs.writeFileSync(pageScssFilePath, updatedPageScssContent);
         console.log(
           chalk.green(
-            `Component '${componentName}' was imported into '${pageName}.scss'.`
+            `Компонент '${componentName}' был импортирован в файл '${pageName}.scss'.`
           )
         );
       } else {
-        console.error(`Page SCSS file '${pageName}.scss' does not exist.`);
+        console.error(`Ошибка! Файл '${pageName}.scss не существует!'`);
       }
     }
 
@@ -108,7 +108,7 @@ export const createComponent = () => {
       fs.writeFileSync(pageJsFilePath, updatedPageJsContent);
       console.log(
         chalk.green(
-          `Component '${componentName}' was imported into '${pageName}.js'.`
+          `Компонент '${componentName}' был импортирован в файл '${pageName}.js'.`
         )
       );
     }
