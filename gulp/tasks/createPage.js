@@ -13,18 +13,35 @@ export const createPage = () => {
     return;
   }
 
-  const pageFolderPath = path.join('src', 'html', 'views');
+  const viewsFolderPath = path.join('src', 'html', 'views');
+  const pageFolderPath = path.join(viewsFolderPath, pageName);
   const pageFilePath = path.join(pageFolderPath, `${pageName}.html`);
+
+  // Создать папку views, если она не существует
+  if (!fs.existsSync(viewsFolderPath)) {
+    fs.mkdirSync(viewsFolderPath, { recursive: true });
+  }
 
   // Создать папку с именем страницы, если она не существует
   if (!fs.existsSync(pageFolderPath)) {
     fs.mkdirSync(pageFolderPath, { recursive: true });
+
+    // Создать папку "sections" внутри папки страницы, если она не существует
+    const sectionsFolderPath = path.join(pageFolderPath, 'sections');
+    fs.mkdirSync(sectionsFolderPath, { recursive: true });
+
+    console.log(
+      chalk.green(`Создана страница '${pageName}' в папке '${pageFolderPath}'`)
+    );
+    console.log(chalk.green(`Создана папка 'sections' внутри папки страницы`));
   }
 
   // Создать файл страницы HTML
   fs.writeFileSync(pageFilePath, '');
   console.log(
-    chalk.green(`\nСоздана страница '${pageName}' в папке '${pageFolderPath}'`)
+    chalk.green(
+      `Создан файл страницы '${pageName}.html' в папке '${pageFolderPath}'`
+    )
   );
 
   // Добавить импорт в файл страницы SCSS
@@ -66,7 +83,6 @@ export const createPage = () => {
 
   // Добавить импорт в файл страницы JS
   const pageJsFolderPath = path.join('src', 'styles', 'js', 'pages');
-
   const pageJsFilePath = path.join(pageJsFolderPath, `${pageName}.js`);
 
   // Создать папку с именем страницы в JS, если она не существует
@@ -81,7 +97,7 @@ export const createPage = () => {
 
   console.log(
     chalk.green(
-      `Создан JavaScript файл страницы '${pageName}.js' в директории '${pageJsFolderPath}\n'`
+      `Создан JavaScript файл страницы '${pageName}.js' в директории '${pageJsFolderPath}'\n`
     )
   );
 

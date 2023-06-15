@@ -1,0 +1,170 @@
+* {
+  line-height: 140%;
+}
+
+h1 {
+  font-size: 32px;
+
+  @media screen and (max-width: $tablet) {
+    font-size: 28px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    font-size: 20px;
+  }
+}
+
+h2 {
+  font-size: 28px;
+
+  @media screen and (max-width: $tablet) {
+    font-size: 22px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    font-size: 18px;
+  }
+}
+
+h3 {
+  font-size: 24px;
+
+  @media screen and (max-width: $tablet) {
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    font-size: 14px;
+  }
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 16px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bolder;
+}
+
+// Test component styles
+.test-section {
+  &__content {
+    padding: 35px;
+    margin: 10px 0;
+    background-color: #1d3557;
+    border-radius: 5px;
+
+    @media screen and (max-width: $tablet) {
+      padding: 22px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      padding: 12px;
+    }
+  }
+
+  &__box {
+    padding: 22px;
+    margin: 25px 15px;
+    background-color: #f1faee;
+    border-radius: 5px;
+
+    &.fonts {
+      & h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: $base_ff;
+        line-height: 100%;
+        margin-bottom: 15px;
+      }
+    }
+
+    & a {
+      font-size: 22px;
+      color: #1d3557;
+
+      &:hover {
+        color: #457b9d;
+      }
+    }
+  }
+
+  &__title {
+    font-family: $base_ff;
+    color: #e63946;
+    font-weight: 900;
+    margin-bottom: 10px;
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 120px;
+  }
+}
+
+.icons-list {
+  display: flex;
+  justify-self: start;
+  align-items: center;
+  gap: 12px;
+
+  &__item {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.icon {
+  font-size: 40px;
+  color: #e63946;
+  @include defaultTransition;
+
+  &:hover {
+    color: #1d3557;
+    cursor: pointer;
+    @include defaultTransition;
+  }
+}
+
+.swiper {
+  width: 100%;
+  @include adaptive-value("height", 420, 220, 1);
+  border-radius: 5px;
+
+  & .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include adaptive-value("font-size", 44, 22, 1);
+    background-color: #b8dacb;
+    color: $black;
+  }
+}
+
+.nav-btn {
+  padding: 12px 32px;
+  background-color: #457b9d;
+  color: $white;
+
+  &:hover {
+    background-color: #e63946;
+    color: #f1faee;
+  }
+}

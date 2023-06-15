@@ -56,7 +56,7 @@ const mainTasks = gulp.series(
 );
 // Построение сценариев выполнения задач
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
-const build = gulp.series(cleanComponents, gulp.parallel(reset, mainTasks));
+const build = gulp.series(reset, gulp.parallel(cleanComponents, mainTasks));
 const deployZIP = gulp.series(reset, mainTasks, zip);
 const deployFTP = gulp.series(reset, mainTasks, ftp);
 const removeEmpty = gulp.series(cleanComponents);

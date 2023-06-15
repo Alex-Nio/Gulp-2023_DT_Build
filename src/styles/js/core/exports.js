@@ -1,11 +1,7 @@
+// Экспортируемые функции
 export const functions = {
-  sayHelloWorld() {
-    console.log('Hello world');
+  getCurrentTime() {
+    const currentTime = new Date();
+    return currentTime;
   },
-
-  sayGoodbye() {
-    console.log('Goodbye');
-  },
-
-  // Другие функции...
 };

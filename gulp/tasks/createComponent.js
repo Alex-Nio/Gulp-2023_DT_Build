@@ -77,7 +77,7 @@ export const createComponent = () => {
         fs.writeFileSync(pageScssFilePath, updatedPageScssContent);
         console.log(
           chalk.green(
-            `Компонент '${componentName}' был импортирован в файл '${pageName}.scss'.`
+            `Компонент '${componentName}' был импортирован в файл '${pageScssFilePath}'.`
           )
         );
       } else {
@@ -108,7 +108,7 @@ export const createComponent = () => {
       fs.writeFileSync(pageJsFilePath, updatedPageJsContent);
       console.log(
         chalk.green(
-          `Компонент '${componentName}' был импортирован в файл '${pageName}.js'.`
+          `Компонент '${componentName}' был импортирован в файл '${pageJsFilePath}'.`
         )
       );
     }

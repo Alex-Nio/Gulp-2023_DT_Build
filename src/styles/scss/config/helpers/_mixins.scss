@@ -107,7 +107,7 @@
 	}
 }
 
-// Mobile disabled hover
+//? Mobile disabled hover
 @mixin hover {
 	@media (any-hover: hover) {
 		&:hover {
@@ -116,7 +116,7 @@
 	}
 }
 
-// Burger
+//? Burger
 @mixin burger {
 	--burger-width: 30px;
 	--burger-height: 18px;

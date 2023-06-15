@@ -1,0 +1,95 @@
+<!-- Это тестовый шаблон секции с примерами -->
+<section class="test-section">
+  <div class="test-section__container">
+    <div class="test-section__content">
+
+      <div class="test-section__box">
+        <h2 class="test-section__title">
+          Ширина контейнера: <span class="container-tracker"></span>
+        </h2>
+      </div>
+
+      <div class="test-section__box">
+        <img src="./images/test.jpg" alt="">
+      </div>
+
+      <div class="test-section__box">
+        <h2 class="test-section__title">Подключение изображений:</h2>
+        <br />
+        <img class="test-section__image" src="./images/logo.png" alt="Test image">
+      </div>
+
+      <div class="test-section__box">
+        <h2 class="test-section__title">Проверка подключения слайдера:</h2>
+        <br />
+        <!-- Slider main container -->
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
+          <!-- If we need scrollbar -->
+          <div class="swiper-scrollbar"></div>
+        </div>
+      </div>
+
+      <div class="test-section__box">
+        <h2 class="test-section__title">Иконочный шрифт:</h2>
+        <br />
+        <ul class="icons-list">
+          <li class="icons-list__item">
+            <i class="icon icon-phone"></i>
+          </li>
+          <li class="icons-list__item">
+            <i class="icon icon-github"></i>
+          </li>
+          <li class="icons-list__item">
+            <i class="icon icon-mail"></i>
+          </li>
+          <li class="icons-list__item">
+            <i class="icon icon-telegram"></i>
+          </li>
+        </ul>
+      </div>
+
+      <div class="test-section__box">
+        <h2 class="test-section__title">Тест постраничной навигации:</h2>
+        <br />
+        <a href="404.html">Перейти на другую страницу (404 страница)</a>
+      </div>
+
+      <div class="test-section__box">
+        <h2 class="test-section__title">Подключение компонентов в html-документ:</h2>
+        <br />
+        @@include('components/test-component/test-component.html')
+      </div>
+
+      <div class="test-section__box fonts">
+        <h2 class="test-section__title">Проверка семейства шрифтов:</h2>
+        <br />
+        <h1>h1 Lorem ipsum dolor sit amet.</h1>
+        <h2>h2 Lorem ipsum dolor sit amet.</h2>
+        <h3>h3 Lorem ipsum dolor sit amet.</h3>
+        <h4>h4 Lorem ipsum dolor sit amet.</h4>
+        <h5>h5 Lorem ipsum dolor sit amet.</h5>
+        <h6>h6 Lorem ipsum dolor sit amet.</h6>
+      </div>
+
+      <div class="test-section__box">
+        <h2 class="test-section__title">Дополнительная информация</h2>
+        <br />
+        <p>Папка <span>Views</span> - папка с другими html страницами</p>
+      </div>
+    </div>
+  </div>
+</section>

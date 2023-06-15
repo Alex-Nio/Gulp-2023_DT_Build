@@ -36,49 +36,59 @@ Poject
 ├── gulp
 │   ├── config
 │   ├── tasks
+│   ├── gide
 ├── src
 │   ├── assets
 │   │   ├── fonts
 │   │   ├── images
 │   ├── files
-│   ├── styles
-│   │   ├── js
-│   │   │   ├── imports.js
-│   │   │   ├── main.js
-│   │   ├── scss
-│   │   │   ├── config
-│   │   │   │   ├── base
-│   │   │   │   │   ├── _fonts.scss
-│   │   │   │   │   ├── components.scss
-│   │   │   │   ├── helpers
-│   │   │   │   │   ├── _functions.scss
-│   │   │   │   │   ├── _mixins.scss
-│   │   │   │   │   ├── _variables.scss
-│   │   │   │   ├── libs
-│   │   │   │   │   ├── _flexframework.scss
-│   │   │   │   │   ├── _reset.scss
-│   │   │   │   │   ├── iconfont.scss
-│   │   │   ├── sections
-│   │   │   │   │   ├── section.scss
-│   │   │   ├── main.scss
 │   ├── html
 │   │   ├── components
 │   │   │   ├── component
 │   │   │   │   ├── component.html
 │   │   │   │   ├── component.js
 │   │   │   │   ├── component.scss
-│   │   ├── sections
-│   │   │   │   ├── section.html
 │   │   ├── views
-│   │   │   │   ├── 404.html
-│   │   │   │   ├── newPage.html
-│   ├── index.html
+│   │   │   ├── page-name
+│   │   │   │   ├── sections
+│   │   │   │   │   ├── section1.html
+│   │   │   │   │   ├── section2.html
+│   │   │   │   │   ├── section3.html
+│   │   │   │   ├── page.html
+│   ├── styles
+│   │   ├── js
+│   │   │   ├── core
+│   │   │   │   ├── exports.js
+│   │   │   │   ├── variables.js
+│   │   ├── pages
+│   │   │   ├── page.js
+│   │   ├── scss
+│   │   │   ├── config
+│   │   │   │   ├── base
+│   │   │   │   │   ├── _fonts.scss
+│   │   │   │   ├── helpers
+│   │   │   │   │   ├── _functions.scss
+│   │   │   │   │   ├── _mixins.scss
+│   │   │   │   │   ├── _variables.scss
+│   │   │   │   ├── libs
+│   │   │   │   │   ├── _reset.scss
+│   │   │   │   │   ├── iconfont.scss
+│   │   │   ├── pages
+│   │   │   │   ├── page-name
+│   │   │   │   │   ├── sections
+│   │   │   │   │   │   ├── section1.scss
+│   │   │   │   │   │   ├── section2.scss
+│   │   │   │   │   │   ├── section3.scss
+│   │   │   │   │   ├── page.scss
 ├── .babelrc
 ├── .gitignore
+├── .eslintrc.json
+├── .prettierrc.json
 ├── gulpfile.js
-├── package-lick.json
+├── package-lock.json
 ├── package.json
 ├── README.md
+├── LICENSE
 └── webpack.config.js
 ```
 
@@ -94,29 +104,36 @@ Poject
 - `scss` - папка, в которой находятся файлы SCSS стилей, разделенных на конфигурационные, вспомогательные, библиотеки, разделы и основной файл main.scss
 - `html` - папка, в которой находятся HTML-файлы, разделенные на компоненты, секции и другие страницы (views)
 - `components` - папка, в которой находятся файлы HTML, JavaScript и SCSS для компонентов, таких как кнопки, формы и т.д.
-- `sections` - папка, в которой находятся файлы HTML для секций, которые можно использовать для добавления компонентов с помощью gulp-file-include
-- `views` - папка, в которой находятся HTML-файлы для страниц проекта, такие как 404.html и page.html
+- `sections` - папка, в которой находятся файлы для секций
+- `views` - папка, в которой находятся HTML-файлы и папки страниц проекта
 - `index.html` - основной HTML-файл проекта
 - `.babelrc` - конфигурационный файл для Babel, который может использоваться для преобразования кода ECMAScript 2015+ в код, который может работать в браузерах
 - `.gitignore` - файл, который говорит Git, какие файлы и папки должны быть проигнорированы при коммите изменений в репозиторий Git
 - `gulpfile.js` - файл, в котором находятся задачи Gulp, их конфигурация и запуск
 
+Конечно! Вот новое оформление команд в формате Markdown:
+
 ---
 
 ## Команды:
 
-#### `gulp`
+<details>
+<summary>gulp</summary>
 
 Запускает тестовый сервер для разработки проекта.
+</details>
 
-#### `gulp build`
+<details>
+<summary>gulp build</summary>
 
 Сборка для продакшн, стандартная:
 
 - Минифицирует только css.
 - Переносит изображения в папку images **без оптимизации**.
+</details>
 
-#### `gulp build --max`
+<details>
+<summary>gulp build --max</summary>
 
 Сборка для продакшн, максимальная:
 
@@ -125,61 +142,71 @@ Poject
 - Добавляет `.webp` изображения и встраивает их в html при помощи тега `<picture>`.
 
 <span style="color:red">**Внимание!** Изображения сжимаются, но теряют качество.</span>
+</details>
 
-#### `gulp build --optimized`
+<details>
+<summary>gulp build --optimized</summary>
 
 Сборка для продакшн, оптимизированная:
 
 - Минифицирует только css.
 - Переносит изображения в папку images, **с оптимизацией**.
+</details>
 
-#### `gulp build --min`
+<details>
+<summary>gulp build --min</summary>
 
 Сборка для продакшн, минимальная:
 
 - Минифицирует только css и html файлы. Всё остальное собирает без вмешательства.
+</details>
 
 ### Создание файлов страниц:
 
-#### `gulp create-page --name page`
+<details>
+<summary>gulp create-page --name page</summary>
 
 - Эта команда позволяет создавать новые страницы для проекта.
 - Для использования таска выполните команду `gulp create-page --name page`, где **page** - название страницы.
-
-- Таск создает три файла: page.html, my-component.scss и page.js. Файлы будут созданы в директориях `src/html/views`, `src/html/styles/scss/pages` и `src/html/styles/js/pages`
+- Таск создает три файла: `page.html`, `my-component.scss` и `page.js`. Файлы будут созданы в директориях `src/html/views`, `src/html/styles/scss/pages` и `src/html/styles/js/pages`.
+</details>
 
 ### Создание файлов компонента:
 
-#### **Вариант 1:** `gulp create-component --name my-component`
-#### **Вариант 2:** `gulp create-component --name my-component --page page-name`
+<details>
+<summary>gulp create-component --name my-component</summary>
 
-- Эти команды позволяет создавать новые компоненты для проекта.
-- Для использования таска необходимо выполнить команду `gulp create-component --name my-component --page page-name`, где **my-component** - имя компонента, а **page-name** - название страницы.
+- Эта команда позволяет создавать новые компоненты для проекта.
+- Для использования таска необходимо выполнить команду `gulp create-component --name my-component --page page-name`, где **my-component** - имя компонента, а **page-name** - название страницы (нужно для того, чтобы автоматически импортировать файлы компонентов в файлы страницы).
+- Таск создает три файла: `my-component.html`, `my-component.scss` и `my-component.js`. Файлы будут созданы в директории `src/html/components`.
+- Все импорты теперь добавляются автоматически, scss файлы компонента добавляются в `scss/pages/им
 
-- Таск создает три файла: my-component.html, my-component.scss и my-component.js. Файлы будут созданы в директории `src/html/components`
-
-- Все импорты теперь добавляются автоматически, scss файлы компонента добавляются в `scss/pages/имя_страницы.scss`, а js файлы в `js/pages/имя_страницы.js`
-
+я_страницы.scss`, а js файлы в `js/pages/имя_страницы.js`.
 - Важно убедиться, что директория `src/html/components` уже существует, иначе таск не выполнится.
-
 - Если имя компонента не будет указано при вызове команды, то будет выведено сообщение об ошибке "Component name is not provided!" и таск завершится без создания файлов.
-
 - Если имя страницы не будет указано при вызове команды, то компонент будет создан без импортирования файлов компонента в файлы страницы.
+</details>
 
-#### `gulp removeEmpty`
+<details>
+<summary>gulp create-component --name my-component --page page-name</summary>
 
-- Удаляет пустые файлы и папки, из папки `components`
+- Эта команда позволяет создавать новые компоненты для проекта.
+- Для использования таска необходимо выполнить команду `gulp create-component --name my-component --page page-name`, где **my-component** - имя компонента, а **page-name** - название страницы (нужно для того, чтобы автоматически импортировать файлы компонентов в файлы страницы).
+- Таск создает три файла: `my-component.html`, `my-component.scss` и `my-component.js`. Файлы будут созданы в директории `src/html/components`.
+- Все импорты теперь добавляются автоматически, scss файлы компонента добавляются в `scss/pages/имя_страницы.scss`, а js файлы в `js/pages/имя_страницы.js`.
+- Важно убедиться, что директория `src/html/components` уже существует, иначе таск не выполнится.
+- Если имя компонента не будет указано при вызове команды, то будет выведено сообщение об ошибке "Component name is not provided!" и таск завершится без создания файлов.
+- Если имя страницы не будет указано при вызове команды, то компонент будет создан без импортирования файлов компонента в файлы страницы.
+</details>
+
+<details>
+<summary>gulp removeEmpty</summary>
+
+Удаляет пустые файлы и папки, из папки `components`.
+</details>
 
 ---
 
 ### Updates:
 
-- Добавлено подключение слайдера на стартовой странице/Перемещены npm пакеты/Добавлен миксин для адаптивного свойства
-- Обновлены стили стартовой страницы + исправлены некоторые баги
-- Добавлен ESLint и prettier
-- Добавлена подсветка удалений и отдельная команда для чистки от пустых файлов и импортов
-  ![Remove Empty](gulp/gide/removeEmpty.jpg)
-
-- Добавлено автоматическое удаление импортов из `imports.js` и `components.scss` при сборке версии для production
-- Добавлено автоматическое удаление пустых папок из папки `components` при сборке версии для production
-- Обновлено описание
+- 15.06.23 Проведена полная реструктуризация сборки

@@ -1,6 +1,5 @@
+// Глобальные переменные
 export const variables = {
-  firstName: 'John',
-  lastName: 'Doe',
-  age: 25,
+  helloWorld: 'Hello World',
   // Другие переменные...
 };

@@ -1,6 +1,8 @@
 .footer {
 	&__content {
-		@include fdrjc_aic;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		height: 50px;
 		background-color: black;
 		color: $white;
