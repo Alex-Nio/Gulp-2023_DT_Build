@@ -16,7 +16,7 @@ gulp removeEmpty
 //? Основные цвета
 $white: #ffffff;
 $black: #000;
-$accent: red;
+$accent: blue;
 // $primary: ;
 // $secondary: ;
 
@@ -114,25 +114,25 @@ $responsiveType: 2;
   [class*="__container"] {
     // макс ширина контейнера + padding * 2
     @media (max-width: $pc) {
-      max-width: rem(1104);
+      max-width: rem(1084);
       padding: 0 30px;
     }
 
     // макс ширина контейнера + padding * 2
     @media (max-width: $tablet) {
-      max-width: rem(980);
+      max-width: rem(1052);
       padding: 0 30px;
     }
 
     // макс ширина контейнера + padding * 2
     @media (max-width: $mobile) {
-      max-width: rem(728);
+      max-width: rem(808);
       padding: 0 20px;
     }
 
     // макс ширина контейнера - padding * 2
     @media (max-width: $mobileSmall) {
-      max-width: rem(320);
+      max-width: rem(448);
       padding: 0 16px;
     }
   }

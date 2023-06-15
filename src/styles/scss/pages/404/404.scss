@@ -1,0 +1,19 @@
+@import "./../../config/main.scss";
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    margin-bottom: 20px;
+  }
+}
+
+.redirect-btn {
+  max-width: 120px;
+  min-width: 120px;
+  padding: 12px 25px;
+  background-color: teal;
+  color: $white;
+  border-radius: 5px;
+}
