@@ -7,4 +7,4 @@ const time = functions.getCurrentTime();
 console.log(time);
 // Пример деструктуризации с одной переменной
 const { helloWorld } = variables;
-console.log(helloWorld);
+console.log(helloWorld);
