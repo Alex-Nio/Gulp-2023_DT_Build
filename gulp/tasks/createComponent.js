@@ -54,7 +54,7 @@ export const createComponent = () => {
       // Добавить импорт в файл страницы SCSS
       if (fs.existsSync(pageScssFilePath)) {
         const pageScssContent = fs.readFileSync(pageScssFilePath, 'utf8');
-        const importScssStatement = `@import '../../../html/components/${componentName}/${componentName}.scss';`;
+        const importScssStatement = `@import '../../../../html/components/${componentName}/${componentName}.scss';`;
 
         let updatedPageScssContent = pageScssContent;
 

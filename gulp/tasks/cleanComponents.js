@@ -14,7 +14,7 @@ async function scssImportsRemove() {
     let updatedPageContent = pageContent;
 
     const scssImportRegex =
-      /@import\s+(["'])\.\.\/\.\.\/\.\.\/html\/components\/([\w-]+)\/([\w-]+)\.scss\1;/g;
+      /@import\s+(["'])\.\.\/\.\.\/\.\.\/\.\.\/html\/components\/([\w-]+)\/([\w-]+)\.scss\1;/g;
     updatedPageContent = updatedPageContent.replace(
       scssImportRegex,
       (match, p1, component, file) => {
