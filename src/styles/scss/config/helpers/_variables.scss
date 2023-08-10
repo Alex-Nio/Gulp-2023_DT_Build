@@ -139,25 +139,25 @@ $responsiveType: 2;
   [class*='__container'] {
     // макс ширина контейнера + padding * 2
     @media (max-width: $pc) {
-      max-width: rem(1210);
+      max-width: toRem(1210);
       padding: 0 35px;
     }
 
     // макс ширина контейнера + padding * 2
     @media (max-width: $tablet) {
-      max-width: rem(880);
+      max-width: toRem(880);
       padding: 0 20px;
     }
 
     // макс ширина контейнера + padding * 2
     @media (max-width: $mobile) {
-      max-width: rem(728);
+      max-width: toRem(728);
       padding: 0 20px;
     }
 
     // макс ширина контейнера - padding * 2
     @media (max-width: $mobileSmall) {
-      max-width: rem(320);
+      max-width: toRem(320);
       padding: 0 16px;
     }
   }
