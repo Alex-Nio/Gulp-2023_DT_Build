@@ -14,21 +14,46 @@ gulp removeEmpty
 */
 
 //? Основные цвета
+$main: #1f1d2b;
 $white: #ffffff;
-$black: #000;
-$accent: blue;
-// $primary: ;
-// $secondary: ;
+$black: #1f1d2b;
+$accent: #6946e8;
+$primary-100: #1f1d2b;
+$primary-200: #262434;
+$primary-300: #ffffff;
+$primary-400: #8b97ae;
+$secondary-100: #6946e8;
+$secondary-200: #db6ab5;
+$secondary-300: #8766ff;
+$secondary-400: #2d2b3e;
+
+//? Состояния
+$normal: #6946e8;
+$hover: #8766ff;
+$active: #6946e8;
+$disabled: rgba(68, 50, 138, 0.5);
+
+//? Состояния текста
+$default-text: #8b97ae;
+$hover-text: #ffffff;
+$active-text: #ffffff;
+$disabled-text: #8b97ae;
+
+//? Border-radius
+$default-br: 12px;
 
 //? По умолчанию
 $base_fz: 16px; //? Размер шрифта по умолчанию 16px
-$base_ff: "Arial, Helvetica", sans-serif; //? Шрифт по умолчанию
-$base_hover: $accent; //? Цвет hover по умолчанию
-$base_bg: $white; //? Цвет фона по умолчанию
-$base_color: $black; //? Цвет текста по умолчанию
+$base_ff: 'DaysOne-Regular', sans-serif; //? Шрифт по умолчанию
+$base_hover: $hover; //? Цвет hover по умолчанию
+$base_bg: $main; //? Цвет фона по умолчанию
+$base_color: $white; //? Цвет текста по умолчанию
 
 //? Переменные семейств шрифтов
-// $ff_Roboto: "Roboto", sans-serif;
+// $ff_Dr: "DaysOne-Regular", sans-serif;
+// $ff_Msb: "Montserrat-SemiBold", sans-serif;
+// $ff_Gb: "Gravity-Bold", sans-serif;
+// $ff_Gr: "Gravity-Regular", sans-serif;
 
 //? Стиль шрифтов
 $I: italic;
@@ -50,7 +75,7 @@ $bl: 900; // Super
 //? Размеры
 $maxWidth: 1920; // Ширина полотна (макета)
 $maxWidthContainer: 1560; // Ширина ПК контейнера
-$minWidth: 320px; // Минимальная ширина страницы
+$minWidth: 288px; // Минимальная ширина страницы
 
 //? Общий отступ у контейнера (Пример формулы расчёта ниже)
 // (если $responsiveType = 1, то 32px / 2 = 16px слева и справа)
@@ -67,10 +92,10 @@ $headerHeight: 55px;
 // *================================================================
 
 //? Брейк-поинты
-$pc: 1200px; // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$pc: 1280px; // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
 $tablet: 992px; // Планшеты, некоторые телефоны в горизонтальном положении
 $mobile: 768px; // Телефоны L
-$mobileSmall: 480px; // Телефоны S
+$mobileSmall: 340px; // Телефоны S
 
 //! ================================================================
 //! Настройки Контейнера
@@ -80,7 +105,7 @@ $mobileSmall: 480px; // Телефоны S
   Например header__container, main__container и т.д.
 */
 
-[class*="__container"] {
+[class*='__container'] {
   max-width: $maxWidthContainer + $containerPadding * 2;
   margin: 0 auto;
   padding: 0 $containerPadding;
@@ -95,7 +120,7 @@ $responsiveType: 2;
 
 // Отзывчивая
 @if ($responsiveType == 1) {
-  [class*="__container"] {
+  [class*='__container'] {
     // Фулл-сайз
     @if ($maxWidthContainer > 0) {
       max-width: rem($maxWidthContainer);
@@ -111,28 +136,28 @@ $responsiveType: 2;
 
 // По брейк-поинтам
 @else {
-  [class*="__container"] {
+  [class*='__container'] {
     // макс ширина контейнера + padding * 2
     @media (max-width: $pc) {
-      max-width: rem(1084);
-      padding: 0 30px;
+      max-width: rem(1210);
+      padding: 0 35px;
     }
 
     // макс ширина контейнера + padding * 2
     @media (max-width: $tablet) {
-      max-width: rem(1052);
-      padding: 0 30px;
+      max-width: rem(880);
+      padding: 0 20px;
     }
 
     // макс ширина контейнера + padding * 2
     @media (max-width: $mobile) {
-      max-width: rem(808);
+      max-width: rem(728);
       padding: 0 20px;
     }
 
     // макс ширина контейнера - padding * 2
     @media (max-width: $mobileSmall) {
-      max-width: rem(448);
+      max-width: rem(320);
       padding: 0 16px;
     }
   }

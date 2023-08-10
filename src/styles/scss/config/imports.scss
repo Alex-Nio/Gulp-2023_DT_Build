@@ -2,11 +2,11 @@
 
 Описание:
 1. _reset - библиотека для сброса дефолтных стилей всех браузеров
-2. _variables - файл, который хранит scss переменные
-3. _functions - файл, который высчитывает ширину контейнера из main.scss. Не удалять!
-4. _mixins - миксины проекта
-5. iconfont - иконочный шрифт. Генерируется с помощью сервиса: https://icomoon.io
-6. _fonts - файл содержащий подключаемые в проект шрифты
+2. _functions - файл, который высчитывает ширину контейнера из main.scss. Не удалять!
+3. _mixins - миксины проекта
+4. _variables - файл, который хранит scss переменные
+5. _fonts - файл содержащий подключаемые в проект шрифты
+6. iconfont - иконочный шрифт. Генерируется с помощью сервиса: https://icomoon.io
 
 *============================ Как сгенерировать шрифт ============================
 
@@ -33,8 +33,8 @@
 */
 
 @import "../config/libs/reset.scss";
-@import "../config/helpers/_variables.scss";
 @import "../config/helpers/_functions.scss";
 @import "../config/helpers/_mixins.scss";
-@import "../config/libs/iconfont.scss";
+@import "../config/helpers/_variables.scss";
 @import "../config/base/_fonts.scss";
+@import "../config/libs/iconfont.scss";

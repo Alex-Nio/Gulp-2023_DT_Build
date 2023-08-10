@@ -1,0 +1,261 @@
+@import './../../config/main.scss';
+@import '../../../../html/components/header/header.scss';
+@import '../../../../html/components/footer/footer.scss';
+
+// Test component styles
+.test-section {
+  &__content {
+    padding: 35px;
+    margin: 10px 0;
+    background-color: #1d3557;
+    border-radius: 5px;
+
+    @media screen and (max-width: $tablet) {
+      padding: 22px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      padding: 12px;
+    }
+  }
+
+  &__box {
+    padding: 22px;
+    margin: 25px 15px;
+    background-color: $secondary-400;
+    border-radius: 5px;
+
+    & > .icons {
+      font-size: 32px;
+
+      & i {
+        margin: 0 3px;
+        @include reset-horizontal-margin;
+      }
+    }
+
+    &.fonts {
+      &--first {
+        h1 {
+          color: $white;
+          font-size: 80px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 104px; /* 130% */
+          text-transform: uppercase;
+        }
+        h2 {
+          color: $white;
+          font-size: 58px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 76px;
+          text-transform: uppercase;
+        }
+        h3 {
+          color: $white;
+          font-size: 48px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 64px;
+          text-transform: uppercase;
+        }
+        h4 {
+          color: $white;
+          font-size: 40px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 52px;
+          text-transform: uppercase;
+        }
+        h5 {
+          color: $white;
+          font-size: 32px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 42px;
+          text-transform: uppercase;
+        }
+        h6 {
+          color: $white;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 32px;
+          text-transform: uppercase;
+        }
+      }
+      &--second {
+        h1 {
+          color: $white;
+          font-size: 80px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 104px; /* 130% */
+          text-transform: uppercase;
+        }
+        h2 {
+          color: $white;
+          font-size: 58px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 76px;
+          text-transform: uppercase;
+        }
+        h3 {
+          color: $white;
+          font-size: 48px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 64px;
+          text-transform: uppercase;
+        }
+        h4 {
+          color: $white;
+          font-size: 40px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 52px;
+          text-transform: uppercase;
+        }
+        h5 {
+          color: $white;
+          font-size: 32px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 42px;
+          text-transform: uppercase;
+        }
+        h6 {
+          color: $white;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 32px;
+          text-transform: uppercase;
+        }
+      }
+      &--third {
+        h1 {
+          color: $white;
+          font-size: 80px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 104px;
+          text-transform: uppercase;
+        }
+        h2 {
+          color: $white;
+          font-size: 58px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 76px;
+          text-transform: uppercase;
+        }
+        h3 {
+          color: $white;
+          font-size: 48px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 64px;
+          text-transform: uppercase;
+        }
+        h4 {
+          color: $white;
+          font-size: 40px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 52px;
+          text-transform: uppercase;
+        }
+        h5 {
+          color: $white;
+          font-size: 32px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 42px;
+          text-transform: uppercase;
+        }
+        h6 {
+          color: $white;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 32px;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    & a {
+      font-size: 22px;
+      color: #1d3557;
+
+      &:hover {
+        color: #457b9d;
+      }
+    }
+  }
+
+  &__title {
+    font-family: $base_ff;
+    color: #e63946;
+    font-weight: 900;
+    margin-bottom: 10px;
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 120px;
+  }
+}
+
+.icons-list {
+  display: flex;
+  justify-self: start;
+  align-items: center;
+  gap: 12px;
+
+  &__item {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.icon {
+  font-size: 40px;
+  color: #e63946;
+  @include defaultTransition;
+
+  &:hover {
+    color: #1d3557;
+    cursor: pointer;
+    @include defaultTransition;
+  }
+}
+
+.swiper {
+  width: 100%;
+  @include adaptive-value('height', 420, 220, 1);
+  border-radius: 5px;
+
+  & .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include adaptive-value('font-size', 44, 22, 1);
+    background-color: #b8dacb;
+  }
+}
+
+.nav-btn {
+  padding: 12px 32px;
+  background-color: #457b9d;
+  color: $white;
+
+  &:hover {
+    background-color: #e63946;
+    color: #f1faee;
+  }
+}

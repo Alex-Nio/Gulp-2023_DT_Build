@@ -1,5 +1,8 @@
-@import "./../../config/main.scss";
-@import "../../../../html/components/header/header.scss";
-@import "../../../../html/components/footer/footer.scss";
-// Ниже тестовый файл стилей секции. После ознакомления удалить файл
-@import "./sections/test-section.scss";
+@import './../../config/main.scss';
+// Default Components
+@import '../../../../html/components/header/header.scss';
+@import '../../../../html/components/footer/footer.scss';
+// UI Components
+// Page unique components
+// Sections
+@import './sections/test-section.scss'; //! Only for Tests

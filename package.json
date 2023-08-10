@@ -45,8 +45,10 @@
     "del": "^6.1.1",
     "eslint": "^8.39.0",
     "eslint-config-prettier": "^8.8.0",
+    "esm": "^3.2.25",
     "fs": "^0.0.1-security",
     "gh-pages": "^4.0.0",
+    "glob": "^10.2.7",
     "gulp": "^4.0.2",
     "gulp-append-prepend": "^1.0.9",
     "gulp-autoprefixer": "^8.0.0",
@@ -57,7 +59,6 @@
     "gulp-file": "^0.4.0",
     "gulp-file-include": "^2.3.0",
     "gulp-filter": "^7.0.0",
-    "gulp-fonter": "^0.3.0",
     "gulp-ftp": "^1.1.0",
     "gulp-group-css-media-queries": "^1.2.2",
     "gulp-htmlmin": "^5.0.1",
@@ -79,6 +80,8 @@
     "gulp-webp-html-nosvg": "^1.1.1",
     "gulp-webpcss": "^1.1.1",
     "gulp-zip": "^5.1.0",
+    "html-webpack-plugin": "^5.5.3",
+    "merge-stream": "^2.0.0",
     "prettier": "2.8.8",
     "sass": "^1.63.3",
     "style-loader": "^3.3.3",
@@ -86,12 +89,11 @@
     "webp-converter": "2.2.3",
     "webpack": "^5.65.0",
     "webpack-stream": "^7.0.0",
-    "yargs": "^17.7.1",
-    "esm": "^3.2.25",
-    "glob": "^10.2.7",
-    "html-webpack-plugin": "^5.5.3"
+    "yargs": "^17.7.1"
   },
   "dependencies": {
-    "swiper": "^9.3.2"
+    "nouislider": "^15.7.1",
+    "select2": "^4.1.0-rc.0",
+    "swiper": "^9.4.1"
   }
 }
