@@ -62,7 +62,7 @@ export const scss = () => {
         )
       )
       // Расскомментировать если нужен обычный дубль файла стилей
-      // .pipe(app.gulp.dest(app.path.build.css))
+      .pipe(app.gulp.dest(app.path.build.css))
       .pipe(
         app.plugins.if(
           app.isBuildDefault ||
