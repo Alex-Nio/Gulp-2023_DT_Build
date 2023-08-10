@@ -1,10 +1,40 @@
+import Swiper, { Navigation, Pagination, Scrollbar } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
 import { variables } from '../core/variables'; // Переменные
 import { functions } from '../core/exports'; // Функции
 
 // Пример вызова функции
 const time = functions.getCurrentTime();
-console.log(time);
+
 // Пример деструктуризации с одной переменной
 const { helloWorld } = variables;
+
+// Swiper init:
+new Swiper('.swiper', {
+  modules: [Navigation, Pagination, Scrollbar],
+  direction: 'horizontal',
+  loop: true,
+  pagination: {
+    el: '.swiper-pagination',
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+
+console.log(time);
 console.log(helloWorld);
-functions.getContainerWidth();
+
+document.addEventListener('DOMContentLoaded', function () {
+  functions.getContainerWidth();
+});
+
+window.addEventListener('resize', functions.getContainerWidth);

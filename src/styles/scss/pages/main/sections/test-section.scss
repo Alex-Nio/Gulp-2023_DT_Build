@@ -103,6 +103,10 @@ h6 {
         color: #457b9d;
       }
     }
+
+    & p {
+      color: $black;
+    }
   }
 
   &__title {
@@ -145,14 +149,14 @@ h6 {
 
 .swiper {
   width: 100%;
-  @include adaptive-value("height", 420, 220, 1);
+  @include adaptive-value('height', 420, 220, 1);
   border-radius: 5px;
 
   & .swiper-slide {
     display: flex;
     align-items: center;
     justify-content: center;
-    @include adaptive-value("font-size", 44, 22, 1);
+    @include adaptive-value('font-size', 44, 22, 1);
     background-color: #b8dacb;
     color: $black;
   }
