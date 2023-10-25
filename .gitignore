@@ -3,6 +3,7 @@
 dist
 node_modules
 package-lock.json
-.favorites.json
 
 src/.temporary_cache
+gulp/config/browser.json
+gulp/version.json

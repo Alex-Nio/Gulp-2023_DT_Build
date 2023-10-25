@@ -1,4 +1,6 @@
-import Swiper, { Navigation, Pagination, Scrollbar } from 'swiper';
+import Swiper from 'swiper';
+import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
+// import Swiper and modules styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';

@@ -1,6 +1,6 @@
 {
   "name": "gulp-2023",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "Сборка Gulp Webpack Babel",
   "main": "gulpfile.js",
   "type": "module",
@@ -8,11 +8,7 @@
     "dev": "gulp",
     "start": "gulp",
     "build": "gulp build",
-    "buildMin": "gulp build --min",
-    "buildMax": "gulp build --max",
-    "buildOptimized": "gulp build --optimized",
     "zip": "gulp deployZIP --build",
-    "svgSprive": "gulp svgSprive",
     "deployFTP": "gulp deployFTP --build",
     "deploy": "gh-pages -d dist"
   },
@@ -53,6 +49,7 @@
     "gulp-append-prepend": "^1.0.9",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-babel": "^8.0.0",
+    "gulp-changed": "^4.0.3",
     "gulp-clean": "^0.4.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-eslint": "^6.0.0",
@@ -68,6 +65,7 @@
     "gulp-newer": "^1.4.0",
     "gulp-notify": "^4.0.0",
     "gulp-plumber": "^1.2.1",
+    "gulp-promise": "^1.0.2",
     "gulp-rename": "^2.0.0",
     "gulp-replace": "^1.1.4",
     "gulp-sass": "^5.1.0",
@@ -80,6 +78,8 @@
     "gulp-webp-html-nosvg": "^1.1.1",
     "gulp-webpcss": "^1.1.1",
     "gulp-zip": "^5.1.0",
+    "gulp-html-beautify": "^1.0.1",
+    "gulp-watch": "^5.0.1",
     "html-webpack-plugin": "^5.5.3",
     "merge-stream": "^2.0.0",
     "prettier": "2.8.8",
@@ -92,8 +92,9 @@
     "yargs": "^17.7.1"
   },
   "dependencies": {
-    "nouislider": "^15.7.1",
-    "select2": "^4.1.0-rc.0",
-    "swiper": "^9.4.1"
+    "inputmask": "^5.0.8",
+    "resize-observer-polyfill": "^1.5.1",
+    "simplebar": "^6.2.5",
+    "swiper": "^10.1.0"
   }
 }

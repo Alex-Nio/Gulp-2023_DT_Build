@@ -5,38 +5,47 @@ import { plugins } from './gulp/config/plugins.js'; // Импорт общих �
 
 // Передаем значения в глобальную переменную
 global.app = {
-  isBuildMax: process.argv.includes('--max'),
-  isBuildMin: process.argv.includes('--min'),
-  isBuildOptimized: process.argv.includes('--optimized'),
-  isBuildDefault:
-    !process.argv.includes('--max') &&
-    !process.argv.includes('--min') &&
-    !process.argv.includes('--optimized'),
+  isDev: process.argv.length === 2 || process.argv[2] === 'dev',
+  isBuild: process.argv.length === 2 || process.argv[2] === 'build',
   path: path,
   gulp: gulp,
   plugins: plugins,
 };
 
+console.log(
+  plugins.chalk.green(
+    app.isDev
+      ? 'Запуск в режиме разработки'
+      : app.isBuild
+      ? 'Запуск в режиме сборки для production'
+      : ''
+  )
+);
+
 // Импорт задач
-import { copyData } from './gulp/tasks/copy.js';
-import { reset } from './gulp/tasks/reset.js';
-import { html } from './gulp/tasks/html.js';
-import { server } from './gulp/tasks/server.js';
-import { scss } from './gulp/tasks/scss.js';
-import { js } from './gulp/tasks/js.js';
-import { images } from './gulp/tasks/images.js';
-import { ttfToWoff, ttfToWoff2, iconFont } from './gulp/tasks/fonts.js';
-import { svgSprive } from './gulp/tasks/svgSprive.js';
-import { zip } from './gulp/tasks/zip.js';
-import { ftp } from './gulp/tasks/ftp.js';
-import { createPage } from './gulp/tasks/createPage.js';
-import { createComponent } from './gulp/tasks/createComponent.js';
-import { cleanComponents } from './gulp/tasks/cleanComponents.js';
-import { linter } from './gulp/tasks/linter.js';
+//? Core
+import { clean } from './gulp/tasks/core/clean.js';
+import { linter } from './gulp/tasks/core/linter.js';
+import { server } from './gulp/tasks/core/server.js';
+//? Default
+import { html } from './gulp/tasks/default/html.js';
+import { scss } from './gulp/tasks/default/scss.js';
+import { js } from './gulp/tasks/default/js.js';
+import { json } from './gulp/tasks/default/json.js';
+import { fonts } from './gulp/tasks/default/fonts.js';
+import { images } from './gulp/tasks/default/images.js';
+//? Custom
+import { createPage } from './gulp/tasks/custom/createPage.js';
+import { createComponent } from './gulp/tasks/custom/createComponent.js';
+import { cleanComponents } from './gulp/tasks/custom/cleanComponents.js';
+import { moveAndCleanIgnored } from './gulp/tasks/custom/moveIgnored.js';
+//? Special
+import { zip } from './gulp/tasks/special/zip.js';
+import { ftp } from './gulp/tasks/special/ftp.js';
 
 // Наблюдатель за изменениями в файлах
 function watcher() {
-  gulp.watch(path.watch.data, copyData);
+  gulp.watch(path.watch.data, json);
   gulp.watch(path.watch.html, html);
   gulp.watch(path.watch.scss, scss);
   gulp.watch(path.watch.componentsScss, scss);
@@ -46,22 +55,24 @@ function watcher() {
   gulp.watch(path.watch.images, images);
 }
 
-export { svgSprive };
-
 // Последовательная обработка шрифтов
-const fontsCopy = gulp.series(ttfToWoff, ttfToWoff2, iconFont);
+const fontsCopy = gulp.series(
+  fonts.ttfToWoff,
+  fonts.ttfToWoff2,
+  fonts.iconFont
+);
 
 // Основные задачи
 const mainTasks = gulp.series(
   fontsCopy,
-  gulp.parallel(linter, copyData, html, scss, js, images)
+  gulp.parallel(linter, json, html, scss, js, images)
 );
 
 // Построение сценариев выполнения задач
-const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
-const build = gulp.series(reset, gulp.parallel(cleanComponents, mainTasks));
-const deployZIP = gulp.series(reset, mainTasks, zip);
-const deployFTP = gulp.series(reset, mainTasks, ftp);
+const dev = gulp.series(clean, mainTasks, gulp.parallel(watcher, server));
+const build = gulp.series(clean, gulp.parallel(cleanComponents, mainTasks));
+const deployZIP = gulp.series(clean, mainTasks, zip);
+const deployFTP = gulp.series(clean, mainTasks, ftp);
 const removeEmpty = gulp.series(cleanComponents);
 
 // Экспорт сценариев
@@ -76,3 +87,4 @@ gulp.task('default', dev);
 // Создание компонента по команде: gulp create-component --name my-component, где my-component - это имя компонента, которое вы хотите создать
 gulp.task('create-component', createComponent);
 gulp.task('create-page', createPage);
+gulp.task('rebase-ignored', moveAndCleanIgnored);

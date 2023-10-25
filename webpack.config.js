@@ -11,13 +11,15 @@ const path = {
 };
 
 const getPageEntries = () => {
-  const pagesPath = pathNode.resolve(`${path.src}/styles/js/pages`);
+  const pagesPath = pathNode.resolve(`${path.src}/styles/js/pages/`);
   const pages = fs.readdirSync(pagesPath);
   const pageEntries = {};
 
   pages.forEach((page) => {
-    const pageName = page.split('.').slice(0, -1).join('.');
-    pageEntries[pageName] = pathNode.resolve(`${pagesPath}/${page}`);
+    if (page !== 'IGNORE') {
+      const pageName = page.split('.').slice(0, -1).join('.');
+      pageEntries[pageName] = pathNode.resolve(`${pagesPath}/${page}`);
+    }
   });
 
   return pageEntries;
