@@ -6,7 +6,7 @@ import { plugins } from './gulp/config/plugins.js'; // Импорт общих �
 // Передаем значения в глобальную переменную
 global.app = {
   isDev: process.argv.length === 2 || process.argv[2] === 'dev',
-  isBuild: process.argv.length === 2 || process.argv[2] === 'build',
+  isBuild: process.argv.length === 2 && process.argv[2] === 'build',
   path: path,
   gulp: gulp,
   plugins: plugins,
@@ -38,7 +38,7 @@ import { images } from './gulp/tasks/default/images.js';
 import { createPage } from './gulp/tasks/custom/createPage.js';
 import { createComponent } from './gulp/tasks/custom/createComponent.js';
 import { cleanComponents } from './gulp/tasks/custom/cleanComponents.js';
-import { moveAndCleanIgnored } from './gulp/tasks/custom/moveIgnored.js';
+import { repackBuildFolder } from './gulp/tasks/custom/repackBuildFolder.js';
 //? Special
 import { zip } from './gulp/tasks/special/zip.js';
 import { ftp } from './gulp/tasks/special/ftp.js';
@@ -70,7 +70,11 @@ const mainTasks = gulp.series(
 
 // Построение сценариев выполнения задач
 const dev = gulp.series(clean, mainTasks, gulp.parallel(watcher, server));
-const build = gulp.series(clean, gulp.parallel(cleanComponents, mainTasks));
+const build = gulp.series(
+  clean,
+  repackBuildFolder,
+  gulp.parallel(cleanComponents, mainTasks)
+);
 const deployZIP = gulp.series(clean, mainTasks, zip);
 const deployFTP = gulp.series(clean, mainTasks, ftp);
 const removeEmpty = gulp.series(cleanComponents);
@@ -87,4 +91,4 @@ gulp.task('default', dev);
 // Создание компонента по команде: gulp create-component --name my-component, где my-component - это имя компонента, которое вы хотите создать
 gulp.task('create-component', createComponent);
 gulp.task('create-page', createPage);
-gulp.task('rebase-ignored', moveAndCleanIgnored);
+gulp.task('rebase-ignored', repackBuildFolder);

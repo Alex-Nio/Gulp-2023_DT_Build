@@ -4,7 +4,7 @@ import { plugins } from '../../config/plugins.js';
 const sass = plugins.gulpSass(plugins.dartSass);
 
 export const scss = () => {
-  const pageFolders = plugins.glob.sync('src/styles/scss/pages/!(*IGNORE)/');
+  const pageFolders = plugins.glob.sync('src/styles/scss/pages/!(*#BUILD)/');
 
   const mainFiles = pageFolders.map((folder) => {
     const folderName = plugins.path.basename(folder);

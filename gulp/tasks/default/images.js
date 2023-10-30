@@ -18,12 +18,15 @@ export const images = () => {
       // .pipe(app.plugins.if(app.isBuildMax, app.gulp.dest(app.path.build.images))) // TODO: тесты
       .pipe(app.gulp.src(app.path.src.images))
       .pipe(
-        plugins.imagemin({
-          progressive: true,
-          svgoPlugins: [{ removeViewBox: false }],
-          interlaced: true,
-          optimizationLevel: 4, // 0 to 7
-        })
+        plugins.if(
+          app.isBuild,
+          plugins.imagemin({
+            progressive: true,
+            svgoPlugins: [{ removeViewBox: false }],
+            interlaced: true,
+            optimizationLevel: 4, // 0 to 7
+          })
+        )
       )
       .pipe(app.gulp.dest(app.path.build.images))
       .pipe(app.gulp.src(app.path.src.svg))

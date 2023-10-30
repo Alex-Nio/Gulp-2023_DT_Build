@@ -4,7 +4,7 @@ import { plugins } from '../../config/plugins.js';
 const __dirname = plugins.path.resolve();
 
 export const html = () => {
-  const folderPattern = 'src/html/views/!(*IGNORE)/';
+  const folderPattern = 'src/html/views/!(*#BUILD)/';
 
   const pageFolders = plugins.glob.sync(folderPattern);
 

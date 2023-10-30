@@ -16,7 +16,7 @@ const getPageEntries = () => {
   const pageEntries = {};
 
   pages.forEach((page) => {
-    if (page !== 'IGNORE') {
+    if (page !== '#BUILD') {
       const pageName = page.split('.').slice(0, -1).join('.');
       pageEntries[pageName] = pathNode.resolve(`${pagesPath}/${page}`);
     }
